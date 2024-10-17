@@ -4,8 +4,8 @@ import Link from 'next/link'
 
 export function Footer() {
   return (
-    <footer className="relative bg-[#FCFDFE] text-black py-16 border-t border-[#734108]">
-      <div className="relative container mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-start space-y-10 md:space-y-0 text-center md:text-left">
+    <footer className="bg-[#FCFDFE] text-black py-16 border-t border-[#734108]">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-start space-y-10 md:space-y-0 text-center md:text-left">
         <div className="space-y-5">
           <h2 className="text-3xl md:text-4xl font-bold text-[#7E4108]">
             Horários

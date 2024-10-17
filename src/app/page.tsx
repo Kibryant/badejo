@@ -1,6 +1,5 @@
-import { Menu, MapPin, Clock, Phone, Facebook, Instagram } from 'lucide-react'
+import { Clock, Phone, Instagram } from 'lucide-react'
 import Link from 'next/link'
-import { GoogleMapsEmbed } from '@next/third-parties/google'
 import Image from 'next/image'
 
 export default function Homepage() {
@@ -33,7 +32,7 @@ export default function Homepage() {
 
             <Link
               href="#menu"
-              className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-300 delay-400"
+              className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400"
             >
               Conheça Nossos Molhos
             </Link>
@@ -85,15 +84,13 @@ export default function Homepage() {
           <div className="w-24 h-1 bg-[#7E4108] mx-auto mb-8" />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Prato 1 */}
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image
-                src="/prato-1.jpg"
+              <img
+                src="/moqueca.jpeg"
                 alt="Prato Badejo - Frutos do Mar"
-                className="rounded-lg w-full h-auto mb-4"
-                width={400}
-                height={300}
+                className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
               />
+
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
                 Camarão na Moranga
               </h3>
@@ -103,15 +100,13 @@ export default function Homepage() {
               </p>
             </div>
 
-            {/* Prato 2 */}
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image
-                src="/prato-2.jpg"
-                alt="Prato Badejo - Risoto"
-                className="rounded-lg w-full h-auto mb-4"
-                width={400}
-                height={300}
+              <img
+                src="/moqueca.jpeg"
+                alt="Prato Badejo - Frutos do Mar"
+                className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
               />
+
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
                 Risoto de Frutos do Mar
               </h3>
@@ -121,15 +116,13 @@ export default function Homepage() {
               </p>
             </div>
 
-            {/* Prato 3 */}
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <Image
-                src="/prato-3.jpg"
-                alt="Prato Badejo - Salmão Grelhado"
-                className="rounded-lg w-full h-auto mb-4"
-                width={400}
-                height={300}
+              <img
+                src="/moqueca.jpeg"
+                alt="Prato Badejo - Frutos do Mar"
+                className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
               />
+
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
                 Salmão Grelhado com Aspargos
               </h3>

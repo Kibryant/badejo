@@ -1,3 +1,5 @@
+import { SeafoodMenu } from '@/components/seafood-menu'
+
 const menuItems = [
   {
     name: 'Grilled Sea Bass',
@@ -42,21 +44,7 @@ export default function MenuPage() {
             Nosso Cardápio
           </h1>
           <div className="w-24 h-1 bg-[#7E4108] mx-auto mb-12" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {menuItems.map((item, index) => (
-              <div
-                key={`${index + 1}`}
-                className="bg-white rounded-lg shadow-md overflow-hidden"
-              >
-                <div className="h-48 bg-[url('/placeholder.svg?height=300&width=400')] bg-cover bg-center" />
-                <div className="p-6">
-                  <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
-                  <p className="text-gray-600 mb-4">{item.description}</p>
-                  <p className="text-[#7E4108] font-bold">{item.price}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <SeafoodMenu />
         </section>
       </main>
     </div>
