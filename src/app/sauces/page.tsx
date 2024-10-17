@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const sauces = [
   {
     name: 'Lemon Butter',
@@ -79,6 +81,24 @@ export default function SaucesPage() {
           </div>
           <p className="text-center text-gray-600 mt-6">
             Assista ao vídeo e aprenda a fazer o melhor molho em casa!
+          </p>
+        </section>
+        <section className="container mx-auto py-16 sm:py-24 px-4 text-center">
+          <h2 className="text-4xl font-bold mb-3 text-[#7E4108]">
+            A História por Trás dos Nossos Molhos
+          </h2>
+          <div className="w-20 h-1 bg-[#7E4108] mx-auto mb-8" />
+
+          <p className="text-lg text-gray-700 mb-6 max-w-xl mx-auto leading-relaxed">
+            Cada um de nossos molhos carrega uma rica tradição familiar e é
+            elaborado com ingredientes frescos e selecionados. Desde o molho
+            tradicional, uma herança de sabor, até criações inovadoras que
+            encantam o paladar, nossos molhos são feitos com amor e dedicação.
+          </p>
+
+          <p className="text-lg text-gray-700 mb-8 max-w-xl mx-auto leading-relaxed">
+            Descubra como um bom molho pode transformar seu prato em uma
+            experiência única!
           </p>
         </section>
       </main>

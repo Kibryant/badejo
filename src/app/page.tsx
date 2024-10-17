@@ -1,8 +1,9 @@
-import { Clock, Phone, Instagram } from 'lucide-react'
+import { Clock, Phone, Instagram, FishIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Badge } from '@/components/ui/badge'
 
-export default function Homepage() {
+export default function Page() {
   const apikey = process.env.GOOGLE_MAP_API_KEY
 
   return (
@@ -15,21 +16,25 @@ export default function Homepage() {
       </Link>
 
       <main>
-        <section className="relative bg-[#7E4108] h-screen sm:bg-cover sm:bg-center sm:bg-fixed  sm:bg-[url('/badejo.jpg')]">
-          <div className="absolute inset-0 sm:bg-black sm:bg-opacity-50 flex flex-col items-center justify-center text-center">
-            <h1 className="text-[#FCFDFE] text-6xl font-bold tracking-wide drop-shadow-lg sm:text-6xl">
+        <section className="relative bg-[#7E4108] h-screen sm:bg-cover sm:bg-center sm:bg-fixed sm:bg-[url('/badejo.jpg')]">
+          <div className="absolute inset-0 sm:bg-black sm:bg-opacity-50 flex flex-col items-center justify-center text-center p-6">
+            <Badge className="flex items-center bg-[#FCFDFE] text-[#7E4108] sm:bg-[#7E4108] sm:text-[#FCFDFE] rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-[#7E4108] mb-2 sm:mb-0">
+              <FishIcon className="mr-2" />
+              Dos mares o melhor!
+            </Badge>
+
+            <h1 className="text-[#FCFDFE] text-5xl font-bold tracking-wide drop-shadow-lg sm:text-6xl">
               Bem-vindo ao Badejo!
             </h1>
 
-            <p className="text-[#FCFDFE] text-lg sm:text-2xl mt-3 mb-3">
-              Dos Mares, o Melhor!
+            <p className="text-gray-200 text-lg sm:text-2xl mt-4 mb-6 max-w-lg leading-relaxed">
+              Experimente o melhor dos sabores do mar em um ambiente acolhedor e
+              sofisticado. Pratos frescos e deliciosos preparados com paixão.
             </p>
-
-            <div className="max-w-40 w-96 h-1 bg-[#FCFDFE] mx-auto mb-8" />
 
             <Link
               href="/sauces"
-              className="bg-[#FCFDFE] text-[#7E4108] sm:bg-[#7E4108] sm:text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400"
+              className="bg-[#FCFDFE] text-[#7E4108] sm:bg-[#7E4108] sm:text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400 font-bold mt-6"
             >
               Conheça Nossos Molhos
             </Link>
@@ -131,28 +136,11 @@ export default function Homepage() {
                 Camarão no Coco
               </h3>
               <p className="text-gray-700">
-                Camarões frescos preparados em um delicioso molho de leite de
-                coco, acompanhados de arroz branco e farofa de dendê.
+                Camarões frescos preparados em um suave e delicioso creme
+                branco, acompanhados de arroz, batata frita crocante e uma
+                pimenta caseira.
               </p>
             </div>
-
-            <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <img
-                src="/moqueca-mista.jpg"
-                alt="Prato Badejo - Frutos do Mar"
-                className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
-              />
-
-              <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
-                Moqueca Mista
-              </h3>
-              <p className="text-gray-700">
-                Uma combinação de peixe, camarão e lula cozidos em um delicioso
-                molho de tomate, leite de coco e azeite de dendê. Acompanha
-                arroz branco e pirão.
-              </p>
-            </div>
-
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
                 src="/casquinha-de-siri.jpg"
@@ -164,8 +152,26 @@ export default function Homepage() {
                 Casquinha de Siri
               </h3>
               <p className="text-gray-700">
-                Delicioso siri desfiado temperado com especiarias e coberto com
-                farofa de pão. Uma entrada perfeita para qualquer refeição.
+                Siri desfiado e temperado com especiarias, trazendo um sabor
+                irresistível. Uma entrada perfeita para qualquer refeição,
+                acompanhada de farofa de manteiga e pimenta caseira.
+              </p>
+            </div>
+            <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <img
+                src="/moqueca-mista.jpg"
+                alt="Prato Badejo - Frutos do Mar"
+                className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
+              />
+
+              <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
+                Moqueca Mista
+              </h3>
+              <p className="text-gray-700">
+                Uma deliciosa combinação de peixe, camarão rosa, camarão
+                rosinha, lula, mexilhão e lagosta, servida com acompanhamentos
+                tradicionais: arroz branco, farofa de banana, pirão e uma
+                pimenta caseira.
               </p>
             </div>
           </div>
@@ -175,7 +181,7 @@ export default function Homepage() {
               href="/menu"
               className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400"
             >
-              Ver Menu Completo
+              Ver Cardápio Completo
             </Link>
           </div>
         </section>

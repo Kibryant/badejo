@@ -21,6 +21,19 @@ import {
 import { menuData } from '@/constants/menu'
 import { drinks } from '@/constants/drinks'
 
+const tabImages = {
+  starters: '/starters.jpg',
+  portions: '/portions-image.jpg',
+  moquecas: '/moquecas-image.jpg',
+  combineds: '/combineds-image.jpg',
+  bobos: '/bobos-image.jpg',
+  grilledFried: '/grilledFried-image.jpg',
+  specials: '/specials-image.jpg',
+  individuals: '/individuals-image.jpg',
+  alternatives: '/alternatives-image.jpg',
+  optionalAddOns: '/optionalAddOns-image.jpg',
+}
+
 const tabs = [
   { value: 'starters', label: 'Entradas' },
   { value: 'portions', label: 'Porções' },
@@ -104,6 +117,11 @@ export function SeafoodMenu() {
               <h2 className="text-2xl font-semibold mb-4 text-[#7E4108]">
                 {tab.label}
               </h2>
+              <img
+                src={tabImages[tab.value]}
+                alt={tab.label}
+                className="w-full h-52 object-cover mb-4 rounded"
+              />
               <div className="flex flex-wrap justify-center">
                 {renderMenuItems(menuData[tab.value as keyof typeof menuData])}
               </div>
@@ -113,33 +131,39 @@ export function SeafoodMenu() {
       </div>
 
       <div className="mt-12 text-black rounded-lg py-16 sm:py-40">
-        <h2 className="text-4xl font-semibold mb-6 text-[#7E4108] text-center">
+        <h2 className="text-4xl font-semibold mb-3 text-[#7E4108] text-center">
           Bebidas
         </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="w-24 h-1 bg-[#7E4108] mx-auto mb-12" />
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {drinkCategories.map((category, index) => (
-            <div
+            <section
               key={`${index + 1}`}
-              className="w-full bg-[#FCFDFE] rounded-lg shadow-md p-4 border border-[#7E4108]"
+              className="w-full bg-white rounded-lg shadow-lg p-6 border border-[#7E4108] focus:outline-none focus:ring-2 focus:ring-[#7E4108]"
+              aria-labelledby={`category-${index}`}
             >
-              <h3 className="text-lg font-semibold text-[#7E4108]">
+              <h3
+                id={`category-${index}`}
+                className="text-xl font-semibold text-[#7E4108] mb-4"
+              >
                 {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {category.items.map(([key, drink], drinkIndex) => (
                   <Card
                     key={`${drinkIndex + 1}`}
-                    className="w-full bg-white bg-opacity-80 backdrop-blur-sm transition-all hover:shadow-lg"
+                    className="p-4 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-[#7E4108] hover:shadow-lg transition-shadow"
                   >
                     <CardHeader>
-                      <CardTitle className="text-lg font-medium">
+                      <CardTitle className="text-lg font-medium text-gray-900">
                         {
                           (drink as { description: string; price: number })
                             .description
                         }
                       </CardTitle>
-                      <CardDescription className="text-green-700 font-bold">
-                        R${' '}
+                      <CardDescription className="text-green-700 font-bold mt-2">
+                        R$
                         {(
                           drink as { description: string; price: number }
                         ).price.toFixed(2)}
@@ -148,7 +172,7 @@ export function SeafoodMenu() {
                   </Card>
                 ))}
               </div>
-            </div>
+            </section>
           ))}
         </div>
       </div>

@@ -29,7 +29,7 @@ export const menuData: MenuData = {
     },
     {
       name: 'Casquinha de Siri ou Aratu',
-      price: 'R$89,00',
+      price: 'R$39,00',
       description: 'Casquinha crocante recheada com siri ou aratu temperado.',
     },
     {
