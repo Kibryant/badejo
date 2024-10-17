@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { GoogleMapsEmbed } from '@next/third-parties/google'
 
 export default function Homepage() {
+    const apikey = process.env.GOOGLE_MAP_API_KEY
+
   return (
     <div className="min-h-screen bg-[#FCFDFE] text-[#000000]">
         <Link href="/sauces" className="fixed bottom-8 right-8 bg-[#7E4108] text-[#FCFDFE] py-3 px-6 rounded-full shadow-lg">
@@ -50,7 +52,7 @@ export default function Homepage() {
       <div className="flex flex-col items-center justify-center">
         <div className="w-full h-64">
           <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCujFMn0vt0bjH2pjC0BBrg5ueNUuQWoJc&q=Badejo+Dos+Mares+O+Melhor"
+            src={`https://www.google.com/maps/embed/v1/place?key=${apikey}&q=Badejo+Dos+Mares+O+Melhor`}
             width="100%"
             height="100%"
             style={{ border: 0 }}
