@@ -1,32 +1,28 @@
 'use client'
 
-import { AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, useState } from 'react'
+import { useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
+    Card, CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle
 } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
 } from '@/components/ui/dialog'
-import { Toggle } from '@/components/ui/toggle'
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Fish, Beer, Coffee } from 'lucide-react'
 
 type MenuItem = {
     name: string;
@@ -48,7 +44,7 @@ type MenuItem = {
   };
   
 
-const menuData: MenuData = {
+const menuData = {
   starters: [
     {
       name: 'Couvert Mix',
@@ -516,243 +512,232 @@ const menuData: MenuData = {
     },
   ],
 }
-type DrinkItem = {
-    descricao: string;
-    preco: number;
-  };
 
-type DrinkCategory = {
-    name: string;
-    items: [string, DrinkItem][];
-    [key: string]: any;
-  };
-  
-
-const bebidasMenu: DrinkCategory = {
-    bebidas: {
-        chopp: {
-            descricao: 'Chopp (340ml)',
-            preco: 17.0,
-        },
+const bebidasMenu = {
+  bebidas: {
+    chopp: {
+      descricao: 'Chopp (340ml)',
+      preco: 17.0,
     },
-    cervejas: {
-        heineken: {
-            descricao: 'Heineken/Original (600ml)',
-            preco: 26.0,
-        },
-        longNeck: {
-            descricao: 'Long Neck (300ml - 350ml)',
-            preco: 16.0,
-        },
-        semAlcool: {
-            descricao: 'Cerveja Sem Álcool (long neck)',
-            preco: 16.0,
-        },
+  },
+  cervejas: {
+    heineken: {
+      descricao: 'Heineken/Original (600ml)',
+      preco: 26.0,
     },
-    coquetes: {
-        coquetelFrutas: {
-            descricao: 'Coquetel de Frutas',
-            preco: 39.0,
-        },
-        alexander: {
-            descricao: 'Alexander',
-            preco: 39.0,
-        },
-        ginTonica: {
-            descricao: 'Gin Tônica',
-            preco: 36.0,
-        },
-        cubaLivre: {
-            descricao: 'Cuba-Livre',
-            preco: 36.0,
-        },
-        margarita: {
-            descricao: 'Margarita',
-            preco: 45.0,
-        },
-        bloodyMary: {
-            descricao: 'Bloody Mary',
-            preco: 45.0,
-        },
+    longNeck: {
+      descricao: 'Long Neck (300ml - 350ml)',
+      preco: 16.0,
     },
-    sucosRefrigerantes: {
-        aguaMineral: {
-            descricao: 'Água Mineral',
-            preco: 9.9,
-        },
-        refrigerante: {
-            descricao: 'Refrigerantes (Lata 350ml)',
-            preco: 12.0,
-        },
-        sucoDiversos: {
-            descricao: 'Suco de Frutas (Diversas)',
-            preco: 17.0,
-        },
-        limonada: {
-            descricao: 'Limonada',
-            preco: 12.0,
-        },
-        sucoTomate: {
-            descricao: 'Suco de Tomate',
-            preco: 17.0,
-        },
-        schweppes: {
-            descricao: 'Schweppes Citrus',
-            preco: 12.0,
-        },
+    semAlcool: {
+      descricao: 'Cerveja Sem Álcool (long neck)',
+      preco: 16.0,
     },
-    batidas: {
-        caipirinha: {
-            descricao: 'Caipirinha (Cachaça)',
-            preco: 29.0,
-        },
-        caipivodkaSmirnoff: {
-            descricao: 'Caipivodka (Smirnoff)',
-            preco: 38.0,
-        },
-        caipivodkaAbsolut: {
-            descricao: 'Caipivodka (Absolut/Stolichnaya)',
-            preco: 45.0,
-        },
-        caipihaegerNacional: {
-            descricao: 'Caipihaeger (Nacional)',
-            preco: 32.0,
-        },
-        caipihaegerImportado: {
-            descricao: 'Caipihaeger (Importado)',
-            preco: 42.0,
-        },
-        caipirinhaSaque: {
-            descricao: 'Caipirinha de Saquê',
-            preco: 42.0,
-        },
-        caipirissima: {
-            descricao: 'Caipiríssima (Bacardi)',
-            preco: 38.0,
-        },
+  },
+  coquetes: {
+    coquetelFrutas: {
+      descricao: 'Coquetel de Frutas',
+      preco: 39.0,
     },
-    aperitivos: {
-        cachacaSalinas: {
-            descricao: 'Cachaça Salinas (Consultar)',
-            preco: 18.0,
-        },
-        campari: {
-            descricao: 'Campari',
-            preco: 26.0,
-        },
-        martini: {
-            descricao: 'Martini',
-            preco: 26.0,
-        },
-        saque: {
-            descricao: 'Saquê',
-            preco: 26.0,
-        },
-        rum: {
-            descricao: 'Rum',
-            preco: 26.0,
-        },
-        steinhaeger: {
-            descricao: 'Steinhaeger',
-            preco: 32.0,
-        },
-        steinhaegerAlemao: {
-            descricao: 'Steinhaeger (Alemão)',
-            preco: 37.0,
-        },
-        licorNacional: {
-            descricao: 'Licores (Nacional)',
-            preco: 34.0,
-        },
-        licorImportado: {
-            descricao: 'Licores (Importado)',
-            preco: 40.0,
-        },
+    alexander: {
+      descricao: 'Alexander',
+      preco: 39.0,
     },
-    whiskys: {
-        bellsTeachers: {
-            descricao: "Bell's ou Teacher's",
-            preco: 32.0,
-        },
-        johnnieWalkerRed: {
-            descricao: 'Johnnie Walker Red',
-            preco: 36.0,
-        },
-        johnnieWalkerBlack: {
-            descricao: 'Johnnie Walker Black',
-            preco: 90.0,
-        },
-        ballantines8: {
-            descricao: "Ballantine's 8 anos",
-            preco: 40.0,
-        },
-        ballantines12: {
-            descricao: "Ballantine's 12 anos",
-            preco: 55.0,
-        },
-        buchanans: {
-            descricao: "Buchanan's",
-            preco: 44.0,
-        },
-        chivas: {
-            descricao: 'Chivas',
-            preco: 44.0,
-        },
+    ginTonica: {
+      descricao: 'Gin Tônica',
+      preco: 36.0,
     },
-    vodka: {
-        smirnoff: {
-            descricao: 'Smirnoff',
-            preco: 28.0,
-        },
-        absolutStolichnaya: {
-            descricao: 'Absolut ou Stolichnaya',
-            preco: 37.0,
-        },
+    cubaLivre: {
+      descricao: 'Cuba-Livre',
+      preco: 36.0,
     },
-    gin: {
-        gilberts: {
-            descricao: "Gilbert's/Gilbey's",
-            preco: 34.0,
-        },
-        gordons: {
-            descricao: "Gordon's",
-            preco: 34.0,
-        },
+    margarita: {
+      descricao: 'Margarita',
+      preco: 45.0,
     },
-    conhaque: {
-        dormecq: {
-            descricao: 'Dormecq',
-            preco: 20.0,
-        },
-        macieira: {
-            descricao: 'Macieira',
-            preco: 25.0,
-        },
-        fundador: {
-            descricao: 'Fundador',
-            preco: 37.0,
-        },
-        napoleon: {
-            descricao: 'Napoleon',
-            preco: 39.0,
-        },
+    bloodyMary: {
+      descricao: 'Bloody Mary',
+      preco: 45.0,
     },
-    name: '',
-    items: []
-} 
+  },
+  sucosRefrigerantes: {
+    aguaMineral: {
+      descricao: 'Água Mineral',
+      preco: 9.9,
+    },
+    refrigerante: {
+      descricao: 'Refrigerantes (Lata 350ml)',
+      preco: 12.0,
+    },
+    sucoDiversos: {
+      descricao: 'Suco de Frutas (Diversas)',
+      preco: 17.0,
+    },
+    limonada: {
+      descricao: 'Limonada',
+      preco: 12.0,
+    },
+    sucoTomate: {
+      descricao: 'Suco de Tomate',
+      preco: 17.0,
+    },
+    schweppes: {
+      descricao: 'Schweppes Citrus',
+      preco: 12.0,
+    },
+  },
+  batidas: {
+    caipirinha: {
+      descricao: 'Caipirinha (Cachaça)',
+      preco: 29.0,
+    },
+    caipivodkaSmirnoff: {
+      descricao: 'Caipivodka (Smirnoff)',
+      preco: 38.0,
+    },
+    caipivodkaAbsolut: {
+      descricao: 'Caipivodka (Absolut/Stolichnaya)',
+      preco: 45.0,
+    },
+    caipihaegerNacional: {
+      descricao: 'Caipihaeger (Nacional)',
+      preco: 32.0,
+    },
+    caipihaegerImportado: {
+      descricao: 'Caipihaeger (Importado)',
+      preco: 42.0,
+    },
+    caipirinhaSaque: {
+      descricao: 'Caipirinha de Saquê',
+      preco: 42.0,
+    },
+    caipirissima: {
+      descricao: 'Caipiríssima (Bacardi)',
+      preco: 38.0,
+    },
+  },
+  aperitivos: {
+    cachacaSalinas: {
+      descricao: 'Cachaça Salinas (Consultar)',
+      preco: 18.0,
+    },
+    campari: {
+      descricao: 'Campari',
+      preco: 26.0,
+    },
+    martini: {
+      descricao: 'Martini',
+      preco: 26.0,
+    },
+    saque: {
+      descricao: 'Saquê',
+      preco: 26.0,
+    },
+    rum: {
+      descricao: 'Rum',
+      preco: 26.0,
+    },
+    steinhaeger: {
+      descricao: 'Steinhaeger',
+      preco: 32.0,
+    },
+    steinhaegerAlemao: {
+      descricao: 'Steinhaeger (Alemão)',
+      preco: 37.0,
+    },
+    licorNacional: {
+      descricao: 'Licores (Nacional)',
+      preco: 34.0,
+    },
+    licorImportado: {
+      descricao: 'Licores (Importado)',
+      preco: 40.0,
+    },
+  },
+  whiskys: {
+    bellsTeachers: {
+      descricao: "Bell's ou Teacher's",
+      preco: 32.0,
+    },
+    johnnieWalkerRed: {
+      descricao: 'Johnnie Walker Red',
+      preco: 36.0,
+    },
+    johnnieWalkerBlack: {
+      descricao: 'Johnnie Walker Black',
+      preco: 90.0,
+    },
+    ballantines8: {
+      descricao: "Ballantine's 8 anos",
+      preco: 40.0,
+    },
+    ballantines12: {
+      descricao: "Ballantine's 12 anos",
+      preco: 55.0,
+    },
+    buchanans: {
+      descricao: "Buchanan's",
+      preco: 44.0,
+    },
+    chivas: {
+      descricao: 'Chivas',
+      preco: 44.0,
+    },
+  },
+  vodka: {
+    smirnoff: {
+      descricao: 'Smirnoff',
+      preco: 28.0,
+    },
+    absolutStolichnaya: {
+      descricao: 'Absolut ou Stolichnaya',
+      preco: 37.0,
+    },
+  },
+  gin: {
+    gilberts: {
+      descricao: "Gilbert's/Gilbey's",
+      preco: 34.0,
+    },
+    gordons: {
+      descricao: "Gordon's",
+      preco: 34.0,
+    },
+  },
+  conhaque: {
+    dormecq: {
+      descricao: 'Dormecq',
+      preco: 20.0,
+    },
+    macieira: {
+      descricao: 'Macieira',
+      preco: 25.0,
+    },
+    fundador: {
+      descricao: 'Fundador',
+      preco: 37.0,
+    },
+    napoleon: {
+      descricao: 'Napoleon',
+      preco: 39.0,
+    },
+  },
+}
 
 const drinkCategories = Object.keys(bebidasMenu).map(category => ({
   name: category,
+  // @ts-ignore - Object.entries returns [key, value] pairs
   items: Object.entries(bebidasMenu[category]),
 }))
 
 export function SeafoodMenu() {
   const [activeTab, setActiveTab] = useState('starters')
 
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
   const renderMenuItems = (items: any[]) => {
-    return items.map((item: { name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<AwaitedReactNode> | null | undefined; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<AwaitedReactNode> | null | undefined }, index: Key | null | undefined) => (
+    return items.map((item, index) => (
       <Card
-        key={index}
+        key={`${index + 1}`}
         className="w-full md:w-64 m-2 bg-white bg-opacity-80 backdrop-blur-sm transition-all hover:shadow-lg"
       >
         <CardHeader>
@@ -896,7 +881,7 @@ export function SeafoodMenu() {
         <h2 className="text-2xl font-semibold mb-6 text-[#7E4108]">Bebidas</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {drinkCategories.map((category, index) => (
-            <DropdownMenu key={index}>
+            <DropdownMenu key={`${index + 1}`}>
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
@@ -909,10 +894,11 @@ export function SeafoodMenu() {
               <DropdownMenuContent className="bg-white text-black rounded-lg shadow-lg border border-[#7E4108] mt-2">
                 {category.items.map(([key, drink], drinkIndex) => (
                   <DropdownMenuItem
-                    key={drinkIndex}
+                    key={`${drinkIndex + 1}`}
                     className="px-4 py-2 hover:bg-[#7E4108] hover:text-white rounded-md transition-colors duration-200"
                   >
-                    {drink.descricao} - R$ {drink.preco.toFixed(2)}
+                    {}
+                    {(drink as { descricao: string; preco: number }).descricao} - R$ {(drink as { descricao: string; preco: number }).preco.toFixed(2)}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
