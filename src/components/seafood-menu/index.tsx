@@ -118,7 +118,7 @@ export function SeafoodMenu() {
                 {tab.label}
               </h2>
               <img
-                src={tabImages[tab.value]}
+                src={tabImages[tab.value as keyof typeof tabImages]}
                 alt={tab.label}
                 className="w-full h-52 object-cover mb-4 rounded"
               />
