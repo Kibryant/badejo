@@ -15,12 +15,9 @@ export default function Homepage() {
       </Link>
 
       <main>
-        <section
-          className="relative bg-cover bg-center bg-fixed h-screen"
-          style={{ backgroundImage: "url('/badejo.jpg')" }}
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center">
-            <h1 className="text-[#FCFDFE] text-5xl font-bold tracking-wide drop-shadow-lg sm:text-6xl">
+        <section className="relative bg-[#7E4108] h-screen sm:bg-cover sm:bg-center sm:bg-fixed  sm:bg-[url('/badejo.jpg')]">
+          <div className="absolute inset-0 sm:bg-black sm:bg-opacity-50 flex flex-col items-center justify-center text-center">
+            <h1 className="text-[#FCFDFE] text-6xl font-bold tracking-wide drop-shadow-lg sm:text-6xl">
               Bem-vindo ao Badejo!
             </h1>
 
@@ -28,11 +25,11 @@ export default function Homepage() {
               Dos Mares, o Melhor!
             </p>
 
-            <div className="max-w-40 sm:w-96 h-1 bg-[#FCFDFE] mx-auto mb-8" />
+            <div className="max-w-40 w-96 h-1 bg-[#FCFDFE] mx-auto mb-8" />
 
             <Link
-              href="#menu"
-              className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400"
+              href="/sauces"
+              className="bg-[#FCFDFE] text-[#7E4108] sm:bg-[#7E4108] sm:text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400"
             >
               Conheça Nossos Molhos
             </Link>
@@ -77,6 +74,45 @@ export default function Homepage() {
           </div>
         </section>
 
+        <section className="bg-[#7E4108] text-[#FCFDFE] py-16 sm:py-40">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold mb-3 text-center text-[#FCFDFE]">
+              A Moqueca Capixaba
+            </h2>
+            <div className="w-24 h-1 bg-[#FCFDFE] mx-auto mb-8" />
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12">
+              <div className="lg:w-1/2 max-w-2xl mx-auto text-center lg:text-left">
+                <p className="mb-6 text-lg leading-relaxed text-[#FCFDFE]">
+                  <strong>
+                    A Moqueca que atrai e encanta os turistas no Espírito Santo.
+                  </strong>{' '}
+                  <br />
+                  Os ingredientes usados no seu preparo não agridem o sabor
+                  delicado dos peixes, camarões, siris, lagostas e, enfim, todos
+                  os frutos do mar que usamos em nosso cardápio e, mesmo o
+                  coentro, de gosto forte, na maneira como é administrado apenas
+                  dá um toque a mais no aroma e enriquece o paladar. A panela de
+                  barro também é muito importante e cada moqueca é preparada
+                  individualmente, obedecendo a uma tradição onde cada produto é
+                  adicionado passo a passo.
+                </p>
+                <p className="text-lg leading-relaxed text-[#FCFDFE]">
+                  O pirão é puxado numa farinha de mandioca fina, peixe desfiado
+                  e os mesmos ingredientes da moqueca Arroz branco e farofinha
+                  de banana da terra completam a nossa moqueca capixaba.
+                </p>
+              </div>
+              <div className="mb-8 lg:mb-0 lg:w-1/2">
+                <img
+                  src="/moqueca-capixaba.jpg"
+                  alt="História do Badejo"
+                  className="rounded-lg shadow-lg w-full object-cover h-[600px]"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="container mx-auto py-16 sm:py-40 px-4">
           <h2 className="text-4xl font-bold mb-3 text-center text-[#7E4108]">
             Um Gostinho do Nosso Menu
@@ -86,51 +122,61 @@ export default function Homepage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
-                src="/moqueca.jpeg"
+                src="/camarao-coco.jpg"
                 alt="Prato Badejo - Frutos do Mar"
                 className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
               />
 
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
-                Camarão na Moranga
+                Camarão no Coco
               </h3>
               <p className="text-gray-700">
-                Um clássico do Badejo: moranga recheada com camarões frescos,
-                temperos especiais e molho de ervas da casa.
+                Camarões frescos preparados em um delicioso molho de leite de
+                coco, acompanhados de arroz branco e farofa de dendê.
               </p>
             </div>
 
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
-                src="/moqueca.jpeg"
+                src="/moqueca-mista.jpg"
                 alt="Prato Badejo - Frutos do Mar"
                 className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
               />
 
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
-                Risoto de Frutos do Mar
+                Moqueca Mista
               </h3>
               <p className="text-gray-700">
-                Delicioso risoto cremoso preparado com polvo, lulas e camarões,
-                servido com um toque de azeite extra virgem.
+                Uma combinação de peixe, camarão e lula cozidos em um delicioso
+                molho de tomate, leite de coco e azeite de dendê. Acompanha
+                arroz branco e pirão.
               </p>
             </div>
 
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <img
-                src="/moqueca.jpeg"
+                src="/casquinha-de-siri.jpg"
                 alt="Prato Badejo - Frutos do Mar"
                 className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
               />
 
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
-                Salmão Grelhado com Aspargos
+                Casquinha de Siri
               </h3>
               <p className="text-gray-700">
-                Filé de salmão grelhado, acompanhado de aspargos frescos e molho
-                cítrico, perfeito para uma refeição leve e saborosa.
+                Delicioso siri desfiado temperado com especiarias e coberto com
+                farofa de pão. Uma entrada perfeita para qualquer refeição.
               </p>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              href="/menu"
+              className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400"
+            >
+              Ver Menu Completo
+            </Link>
           </div>
         </section>
 
