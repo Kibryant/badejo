@@ -2,7 +2,7 @@
 
 import { I18nextProvider } from 'react-i18next'
 import type { ReactNode } from 'react'
-import initTranslations from '@/app/i18n'
+import { initTranslations } from '@/app/i18n'
 import { type Resource, createInstance } from 'i18next'
 
 export function TranslationsProvider({

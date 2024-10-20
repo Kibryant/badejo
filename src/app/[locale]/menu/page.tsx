@@ -1,4 +1,4 @@
-import initTranslations from '@/app/i18n'
+import { initTranslations } from '@/app/i18n'
 import LanguageChanger from '@/components/language-changer'
 import { SeafoodMenu } from '@/components/seafood-menu'
 import { TranslationsProvider } from '@/providers/translations-provider'
