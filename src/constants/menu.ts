@@ -1,4 +1,6 @@
-type MenuItem = {
+import { drinks } from './drinks'
+
+export type MenuItem = {
   name: string
   description: string
   price?: string | number
@@ -17,91 +19,92 @@ type MenuData = {
   individuals: MenuItem[]
   alternatives: MenuItem[]
   optionalAddOns: MenuItem[]
+  drinks: typeof drinks
 }
 
 export const menuData: MenuData = {
   starters: [
     {
       name: 'Couvert Mix',
-      price: 'R$119,00',
+      price: '119,00',
       description:
         'Um combinado variado de entradas deliciosas para começar a refeição.',
     },
     {
       name: 'Casquinha de Siri ou Aratu',
-      price: 'R$39,00',
+      price: '39,00',
       description: 'Casquinha crocante recheada com siri ou aratu temperado.',
     },
     {
       name: 'Casquinha de Lagosta Gratinada',
-      price: 'R$59,00',
+      price: '59,00',
       description: 'Lagosta suculenta gratinada em uma casquinha crocante.',
     },
     {
       name: 'Mexilhões ao Vinagrete (250g)',
-      price: 'R$59,00',
+      price: '59,00',
       description: 'Mexilhões frescos ao vinagrete com um toque de limão.',
     },
     {
       name: 'Frigideira de Mexilhões (250g)',
-      price: 'R$59,00',
+      price: '59,00',
       description:
         'Mexilhões salteados e temperados, servidos diretamente na frigideira.',
     },
     {
       name: 'Vinagrete de Lagosta com Lula',
-      price: 'R$129,00',
+      price: '129,00',
       description: 'Lagosta e lulas frescas servidas com vinagrete especial.',
     },
     {
       name: 'Vinagrete de Polvo e Lagosta',
-      price: 'R$199,00',
+      price: '199,00',
       description:
         'Combinação premium de polvo e lagosta, servidos com vinagrete.',
     },
     {
       name: 'Vinagrete de Lula com Mexilhões',
-      price: 'R$99,00',
+      price: '99,00',
       description: 'Lulas e mexilhões frescos marinados em vinagrete saboroso.',
     },
     {
       name: 'Ostras Gratinadas (12un)',
-      price: 'R$98,00',
+      price: '98,00',
       description: 'Ostras gratinadas com queijo e temperos especiais.',
     },
     {
       name: 'Lulas à Provençal (400g)',
-      price: 'R$99,00',
+      price: '99,00',
       description: 'Lulas grelhadas à provençal com alho e salsa.',
     },
     {
       name: 'Salada Mista',
-      price: 'R$65,00',
+      price: '65,00',
       description: 'Salada fresca com uma combinação de folhas e legumes.',
     },
     {
       name: 'Salada de Lagosta',
-      price: 'R$47,00',
+      price: '47,00',
       description: 'Salada leve e refrescante com pedaços de lagosta.',
     },
     {
       name: 'Camarões Rosa à Paulista (200g)',
-      price: 'R$89,00',
+      price: '89,00',
       description: 'Camarões rosa preparados à paulista, com alho e azeite.',
     },
     {
       name: 'Mexilhões Empanados (250g)',
-      price: 'R$99,00',
+      price: '99,00',
       description: 'Mexilhões crocantes empanados e fritos.',
     },
     {
       name: 'Camarões Rosa ao Catupiry (200g)',
-      price: 'R$65,00',
+      price: '65,00',
       description: 'Camarões rosa gratinados com catupiry.',
     },
     {
       name: 'Caldo de Sururu',
-      price: 'R$39,00',
+      price: '39,00',
       description: 'Caldo saboroso feito com sururu, ideal para aquecer.',
     },
   ],
@@ -322,67 +325,67 @@ export const menuData: MenuData = {
       name: 'Moqueca à Moda da Casa',
       description:
         'Badejo (600g), Lagosta (400g), Camarões Rosa (400g), Camarões Rosinha (200g), Lulas (400g) e Mexilhões (200g). Um prato completo e farto para quem deseja desfrutar de uma autêntica moqueca com frutos do mar variados.',
-      price: 'R$ 768,00',
+      price: ' 768,00',
     },
     {
       name: '1/2 Moqueca à Moda da Casa',
       description:
         'Badejo (300g), Lagosta (200g), Camarões Rosa (200g), Camarões Rosinha (100g), Lulas (200g) e Mexilhões (100g). A versão reduzida do prato tradicional, perfeita para grupos menores.',
-      price: 'R$ 448,00',
+      price: ' 448,00',
     },
     {
       name: 'Paella para 4 Pessoas',
       description:
         'Uma paella rica em sabores do mar, perfeita para compartilhar com a família ou amigos.',
-      price: 'R$ 558,00',
+      price: ' 558,00',
     },
     {
       name: 'Paella para 2 Pessoas',
       description:
         'Abadejo, Bacalhau, Camarões Rosa, Camarões Rosinha, Lulas e Mexilhões. Decorado com Camarões Rosa Inteiros e Caudas de Lagosta. Ideal para um jantar especial a dois. Tempo de preparo: 50 minutos.',
-      price: 'R$ 389,00',
+      price: ' 389,00',
     },
     {
       name: 'Titanic para 4 Pessoas',
       description:
         'Um prato grandioso de frutos do mar, feito para surpreender e satisfazer todos à mesa.',
-      price: 'R$ 568,00',
+      price: ' 568,00',
     },
     {
       name: 'Titanic para 2 Pessoas',
       description:
         'Filé de Abadejo grelhado acompanhado de Camarões Rosa empanados ao molho de camarões. Uma combinação perfeita para dois.',
-      price: 'R$ 339,00',
+      price: ' 339,00',
     },
     {
       name: 'Peixe na Telha',
       description:
         'Um prato tradicional servido em telha de barro, garantindo um sabor autêntico e rústico.',
-      price: 'R$ 279,00',
+      price: ' 279,00',
     },
     {
       name: 'Peixe na Telha com Camarões Rosa',
       description:
         'O clássico peixe na telha com um toque especial de camarões rosa, para os amantes de frutos do mar.',
-      price: 'R$ 329,00',
+      price: ' 329,00',
     },
     {
       name: 'Peixe na Telha com Lagosta',
       description:
         'Peixe servido na telha com o toque refinado de lagosta. Uma escolha sofisticada e deliciosa.',
-      price: 'R$ 349,00',
+      price: ' 349,00',
     },
     {
       name: 'Bacalhau à Moda Capixaba (450g)',
       description:
         'Bacalhau preparado ao estilo capixaba, trazendo sabores autênticos e bem temperados.',
-      price: 'R$ 298,00',
+      price: ' 298,00',
     },
     {
       name: 'Bacalhau ao Forno (450g)',
       description:
         'Bacalhau assado no forno, suculento e saboroso, perfeito para uma refeição completa.',
-      price: 'R$ 298,00',
+      price: ' 298,00',
     },
   ],
   individuals: [
@@ -390,49 +393,49 @@ export const menuData: MenuData = {
       name: 'Truta com Legumes no Vapor',
       description:
         'Truta servida com uma saudável porção de legumes preparados no vapor.',
-      price: 'R$ 89,00',
+      price: ' 89,00',
     },
     {
       name: 'Truta com Arroz de Brócolis e Alcaparras',
       description:
         'Truta grelhada acompanhada de arroz de brócolis e alcaparras, um prato leve e saboroso.',
-      price: 'R$ 89,00',
+      price: ' 89,00',
     },
     {
       name: 'Truta com Purê ou Batata Sauté',
       description:
         'Deliciosa truta servida com a opção de purê cremoso ou batata sauté.',
-      price: 'R$ 89,00',
+      price: ' 89,00',
     },
     {
       name: 'Risoto de Camarões Rosinha',
       description:
         'Risoto cremoso acompanhado de camarões rosinha, ideal para quem aprecia frutos do mar.',
-      price: 'R$ 109,00',
+      price: ' 109,00',
     },
     {
       name: 'Risoto de Camarões Rosa',
       description:
         'Risoto cremoso com camarões rosa, trazendo sabores intensos e marcantes.',
-      price: 'R$ 129,00',
+      price: ' 129,00',
     },
     {
       name: 'Arroz de Polvo',
       description:
         'Polvo suculento servido com arroz temperado, uma escolha perfeita para os fãs de frutos do mar.',
-      price: 'R$ 179,00',
+      price: ' 179,00',
     },
     {
       name: 'Espaguete com Camarões Rosa e Rosinha',
       description:
         'Espaguete combinado com camarões rosa e rosinha, ideal para quem gosta de uma massa leve e saborosa.',
-      price: 'R$ 179,00',
+      price: ' 179,00',
     },
     {
       name: 'Espaguete com Frutos do Mar',
       description:
         'Espaguete servido com uma variedade de frutos do mar frescos.',
-      price: 'R$ 110,00',
+      price: ' 110,00',
     },
   ],
   alternatives: [
@@ -440,30 +443,30 @@ export const menuData: MenuData = {
       name: 'Peito de Frango Grelhado (Purê ou Fritas)',
       description:
         'Peito de frango grelhado, servido com a opção de purê ou fritas, uma escolha leve e saborosa.',
-      price: 'R$ 59,00',
+      price: ' 59,00',
     },
     {
       name: 'Filé Mignon com Fritas',
       description: 'Filé mignon grelhado acompanhado de batatas fritas.',
-      price: 'R$ 99,00',
+      price: ' 99,00',
     },
     {
       name: 'Filé à Parmegiana',
       description:
         'Clássico filé à parmegiana, com molho de tomate e queijo derretido.',
-      price: 'R$ 99,00',
+      price: ' 99,00',
     },
     {
       name: 'Espaguete com Picadinho de Filé Mignon ao Sugo',
       description:
         'Espaguete servido com picadinho de filé mignon ao molho sugo, uma refeição completa e saborosa.',
-      price: 'R$ 69,00',
+      price: ' 69,00',
     },
     {
       name: 'Picanha Importada (300g)',
       description:
         'Picanha importada grelhada, perfeita para os amantes de carne.',
-      price: 'R$ 120,00',
+      price: ' 120,00',
     },
   ],
   optionalAddOns: [
@@ -486,4 +489,5 @@ export const menuData: MenuData = {
       price: 39.0,
     },
   ],
+  drinks,
 }

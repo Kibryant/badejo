@@ -18,20 +18,22 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { menuData } from '@/constants/menu'
-import { drinks } from '@/constants/drinks'
+import { menuData, type MenuItem } from '@/constants/menu'
+import { drinkCategories } from '@/constants/drinks'
+import { useTranslation } from 'react-i18next'
 
 const tabImages = {
   starters: '/starters.jpg',
-  portions: '/portions-image.jpg',
-  moquecas: '/moquecas-image.jpg',
+  portions: '/portions.jpg',
+  moquecas: '/moqueca-mista.jpg',
   combineds: '/combineds-image.jpg',
-  bobos: '/bobos-image.jpg',
-  grilledFried: '/grilledFried-image.jpg',
-  specials: '/specials-image.jpg',
+  bobos: '/camarao-coco.jpg',
+  grilledFried: '/grilled-fried.jpg',
+  specials: '/moqueca-capixaba.jpg',
   individuals: '/individuals-image.jpg',
   alternatives: '/alternatives-image.jpg',
   optionalAddOns: '/optionalAddOns-image.jpg',
+  drinks: '/drinks.jpg',
 }
 
 const tabs = [
@@ -45,48 +47,95 @@ const tabs = [
   { value: 'individuals', label: 'Individuais' },
   { value: 'alternatives', label: 'Alternativas' },
   { value: 'optionalAddOns', label: 'Adicionais' },
-]
+  { value: 'drinks', label: 'Bebidas' },
+] as const
 
-const drinkCategories = Object.keys(drinks).map(category => ({
-  name: category,
-  // @ts-ignore - Object.entries returns [key, value] pairs
-  items: Object.entries(drinks[category]),
-}))
+interface SeafoodMenuProps {
+  namespace: string[]
+}
 
-export function SeafoodMenu() {
+export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
+  const { t } = useTranslation(namespace)
+
   const [activeTab, setActiveTab] = useState('starters')
 
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  const renderMenuItems = (items: any[]) => {
+  const renderMenuItems = (items: MenuItem[]) => {
     return items.map((item, index) => (
       <Card
         key={`${index + 1}`}
         className="w-full md:w-64 m-2 bg-white bg-opacity-80 backdrop-blur-sm transition-all hover:shadow-lg"
       >
         <CardHeader>
-          <CardTitle className="">{item.name}</CardTitle>
-          <CardDescription>{item.description}</CardDescription>
+          <CardTitle className="">{t(item.name)}</CardTitle>
+          <CardDescription>{t(item.description)}</CardDescription>
         </CardHeader>
         <CardFooter className="flex justify-between">
-          <span className="text-green-700 font-bold">{item.price}</span>
+          <span className="text-green-700 font-bold">
+            {item.price && `R$${item.price}`}
+          </span>
           <Dialog>
             <DialogTrigger asChild>
-              <Button variant="outline">Detalhes</Button>
+              <Button variant="outline">{t('Detalhes')}</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
                 <DialogTitle className="text-[#7E4108]">
-                  {item.name}
+                  {t(item.name)}
                 </DialogTitle>
-                <DialogDescription>{item.description}</DialogDescription>
+                <DialogDescription>{t(item.description)}</DialogDescription>
               </DialogHeader>
-              <div className="grid gap-4 py-4">
-                <p>Preço: {item.price}</p>
-              </div>
+              {item.price && (
+                <div className="grid gap-4 py-4">
+                  <p>
+                    {t('Preço')} {item.price}
+                  </p>
+                </div>
+              )}
+              {item.smallPortionPrice && (
+                <div className="grid gap-4 py-4">
+                  <p>
+                    {t('Pequena porção:')} {item.smallPortionPrice}
+                  </p>
+                </div>
+              )}
+
+              {item.largePortionPrice && (
+                <div className="grid gap-4 py-4">
+                  <p>
+                    {t('Grande porção:')}: {item.largePortionPrice}
+                  </p>
+                </div>
+              )}
             </DialogContent>
           </Dialog>
         </CardFooter>
       </Card>
+    ))
+  }
+
+  const renderDrinks = () => {
+    return drinkCategories.map((category, categoryIndex) => (
+      <div key={`${category}-${categoryIndex + 1}`} className="mb-8">
+        <h3 className="text-2xl font-semibold mb-4 text-[#7E4108]">
+          {t(category.name.charAt(0).toUpperCase() + category.name.slice(1))}
+          {/* {category.name.charAt(0).toUpperCase() + category.name.slice(1)} */}
+        </h3>
+        {category.items.map(([, drink], index) => (
+          <Card
+            key={`${categoryIndex}-${index + 1}`}
+            className="w-full md:w-64 m-2 bg-white bg-opacity-80 backdrop-blur-sm transition-all hover:shadow-lg"
+          >
+            <CardHeader>
+              <CardTitle>{t(drink.description)}</CardTitle>
+            </CardHeader>
+            <CardFooter>
+              <span className="text-green-700 font-bold">
+                R${drink.price.toFixed(2)}
+              </span>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
     ))
   }
 
@@ -97,12 +146,12 @@ export function SeafoodMenu() {
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}
-            className="w-full h-32 sm:h-fit"
+            className="w-full h-40"
           >
             <TabsList className="grid w-full grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
               {tabs.map(tab => (
                 <TabsTrigger key={tab.value} value={tab.value}>
-                  {tab.label}
+                  {t(tab.label)}
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -115,66 +164,25 @@ export function SeafoodMenu() {
           {tabs.map(tab => (
             <TabsContent key={tab.value} value={tab.value} className="mt-4">
               <h2 className="text-2xl font-semibold mb-4 text-[#7E4108]">
-                {tab.label}
+                {t(tab.label)}
               </h2>
               <img
                 src={tabImages[tab.value as keyof typeof tabImages]}
                 alt={tab.label}
                 className="w-full h-52 object-cover mb-4 rounded"
               />
-              <div className="flex flex-wrap justify-center">
-                {renderMenuItems(menuData[tab.value as keyof typeof menuData])}
-              </div>
+              {Array.isArray(menuData[tab.value]) ? (
+                <div className="flex flex-wrap justify-center">
+                  {renderMenuItems(menuData[tab.value] as MenuItem[])}
+                </div>
+              ) : (
+                <div className="sm:flex sm:flex-wrap sm:justify-center">
+                  {renderDrinks()}
+                </div>
+              )}
             </TabsContent>
           ))}
         </Tabs>
-      </div>
-
-      <div className="mt-12 text-black rounded-lg py-16 sm:py-40">
-        <h2 className="text-4xl font-semibold mb-3 text-[#7E4108] text-center">
-          Bebidas
-        </h2>
-        <div className="w-24 h-1 bg-[#7E4108] mx-auto mb-12" />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {drinkCategories.map((category, index) => (
-            <section
-              key={`${index + 1}`}
-              className="w-full bg-white rounded-lg shadow-lg p-6 border border-[#7E4108] focus:outline-none focus:ring-2 focus:ring-[#7E4108]"
-              aria-labelledby={`category-${index}`}
-            >
-              <h3
-                id={`category-${index}`}
-                className="text-xl font-semibold text-[#7E4108] mb-4"
-              >
-                {category.name.charAt(0).toUpperCase() + category.name.slice(1)}
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {category.items.map(([key, drink], drinkIndex) => (
-                  <Card
-                    key={`${drinkIndex + 1}`}
-                    className="p-4 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-[#7E4108] hover:shadow-lg transition-shadow"
-                  >
-                    <CardHeader>
-                      <CardTitle className="text-lg font-medium text-gray-900">
-                        {
-                          (drink as { description: string; price: number })
-                            .description
-                        }
-                      </CardTitle>
-                      <CardDescription className="text-green-700 font-bold mt-2">
-                        R$
-                        {(
-                          drink as { description: string; price: number }
-                        ).price.toFixed(2)}
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
       </div>
     </>
   )

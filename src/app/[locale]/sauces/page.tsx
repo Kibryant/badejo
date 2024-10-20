@@ -96,7 +96,7 @@ export default function SaucesPage() {
             encantam o paladar, nossos molhos são feitos com amor e dedicação.
           </p>
 
-          <p className="text-lg text-gray-700 mb-8 max-w-xl mx-auto leading-relaxed"> 
+          <p className="text-lg text-gray-700 mb-8 max-w-xl mx-auto leading-relaxed">
             Descubra como um bom molho pode transformar seu prato em uma
             experiência única!
           </p>

@@ -3,7 +3,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 
-export default function Page() {
+interface PageProps {
+  params: {
+    locale: string
+  }
+}
+
+export default async function Page({ params: { locale } }: PageProps) {
   const apikey = process.env.GOOGLE_MAP_API_KEY
 
   return (

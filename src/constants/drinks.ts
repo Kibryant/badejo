@@ -23,7 +23,7 @@ export const drinks = {
       price: 16.0,
     },
   },
-  coquetes: {
+  coquetéis: {
     coquetelFrutas: {
       description: 'Coquetel de Frutas',
       price: 39.0,
@@ -212,3 +212,19 @@ export const drinks = {
     },
   },
 }
+
+export const drinkCategories = [
+  { name: 'chopps', items: Object.entries(drinks.chopps) },
+  { name: 'cervejas', items: Object.entries(drinks.cervejas) },
+  { name: 'coquetéis', items: Object.entries(drinks.coquetéis) },
+  {
+    name: 'sucos e refrigerantes',
+    items: Object.entries(drinks['Sucos e Refrigerantes']),
+  },
+  { name: 'batidas', items: Object.entries(drinks.batidas) },
+  { name: 'aperitivos', items: Object.entries(drinks.aperitivos) },
+  { name: 'whiskys', items: Object.entries(drinks.whiskys) },
+  { name: 'vodka', items: Object.entries(drinks.vodka) },
+  { name: 'gin', items: Object.entries(drinks.gin) },
+  { name: 'conhaque', items: Object.entries(drinks.conhaque) },
+]
