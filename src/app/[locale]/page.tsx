@@ -31,6 +31,10 @@ export default async function Page({ params: { locale } }: PageProps) {
             loop
             muted
             playsInline
+            controls={false}
+            preload="auto"
+            disablePictureInPicture
+            controlsList="nodownload nofullscreen noplaybackrate"
           />
 
           <div className="absolute inset-0 sm:bg-black sm:bg-opacity-50 flex flex-col items-center justify-center text-center p-6">
