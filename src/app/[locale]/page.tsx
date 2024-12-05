@@ -24,8 +24,17 @@ export default async function Page({ params: { locale } }: PageProps) {
 
       <main>
         <section className="relative bg-[#7E4108] h-screen sm:bg-cover sm:bg-center sm:bg-fixed sm:bg-[url('/badejo.jpg')]">
+          <video
+            className="absolute inset-0 w-full h-full object-cover sm:hidden"
+            src="/introduction.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+
           <div className="absolute inset-0 sm:bg-black sm:bg-opacity-50 flex flex-col items-center justify-center text-center p-6">
-            <Badge className="flex items-center bg-[#FCFDFE] text-[#7E4108] sm:bg-[#7E4108] sm:text-[#FCFDFE] rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-[#7E4108] mb-2 sm:mb-0">
+            <Badge className="flex items-center bg-[#7E4108] text-[#FCFDFE] rounded-full shadow-lg transform transition-transform duration-300 hover:scale-105 hover:bg-[#7E4108] mb-2 sm:mb-0">
               <FishIcon className="mr-2" />
               Dos mares o melhor!
             </Badge>
@@ -41,7 +50,7 @@ export default async function Page({ params: { locale } }: PageProps) {
 
             <Link
               href="/sauces"
-              className="bg-[#FCFDFE] text-[#7E4108] sm:bg-[#7E4108] sm:text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400 font-bold mt-6"
+              className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400 font-bold mt-6"
             >
               Conheça Nossos Molhos
             </Link>
