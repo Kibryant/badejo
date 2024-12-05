@@ -68,7 +68,7 @@ export const drinks = {
     },
     sucoTomate: {
       description: 'Suco de Tomate',
-      price: 17.0,
+      price: 29.0,
     },
     schweppes: {
       description: 'Schweppes Citrus',
@@ -128,7 +128,7 @@ export const drinks = {
     },
     steinhaeger: {
       description: 'Steinhaeger',
-      price: 32.0,
+      price: 26.0,
     },
     steinhaegerAlemao: {
       description: 'Steinhaeger (Alemão)',
@@ -146,7 +146,7 @@ export const drinks = {
   whiskys: {
     bellsTeachers: {
       description: "Bell's ou Teacher's",
-      price: 32.0,
+      price: 28.0,
     },
     johnnieWalkerRed: {
       description: 'Johnnie Walker Red',
@@ -154,15 +154,15 @@ export const drinks = {
     },
     johnnieWalkerBlack: {
       description: 'Johnnie Walker Black',
-      price: 90.0,
+      price: 44.0,
     },
     ballantines8: {
       description: "Ballantine's 8 anos",
-      price: 40.0,
+      price: 36.0,
     },
     ballantines12: {
       description: "Ballantine's 12 anos",
-      price: 55.0,
+      price: 44.0,
     },
     buchanans: {
       description: "Buchanan's",
@@ -186,7 +186,7 @@ export const drinks = {
   gin: {
     gilberts: {
       description: "Gilbert's/Gilbey's",
-      price: 34.0,
+      price: 23.0,
     },
     gordons: {
       description: "Gordon's",

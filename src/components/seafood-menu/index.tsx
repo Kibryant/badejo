@@ -94,7 +94,7 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
               {item.smallPortionPrice && (
                 <div className="grid gap-4 py-4">
                   <p>
-                    {t('Pequena porção:')} {item.smallPortionPrice}
+                    {t('200g, serve 1 pessoa')}: R${item.smallPortionPrice.toFixed(2)}
                   </p>
                 </div>
               )}
@@ -102,7 +102,7 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
               {item.largePortionPrice && (
                 <div className="grid gap-4 py-4">
                   <p>
-                    {t('Grande porção:')}: {item.largePortionPrice}
+                    {t('400g, serve 2 pessoas')}: R${item.largePortionPrice.toFixed(2)}
                   </p>
                 </div>
               )}
@@ -118,7 +118,6 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
       <div key={`${category}-${categoryIndex + 1}`} className="mb-8">
         <h3 className="text-2xl font-semibold mb-4 text-[#7E4108]">
           {t(category.name.charAt(0).toUpperCase() + category.name.slice(1))}
-          {/* {category.name.charAt(0).toUpperCase() + category.name.slice(1)} */}
         </h3>
         {category.items.map(([, drink], index) => (
           <Card
@@ -146,11 +145,11 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
           <Tabs
             value={activeTab}
             onValueChange={setActiveTab}
-            className="w-full h-40"
+            className="w-full h-40 md:h-20"
           >
-            <TabsList className="grid w-full grid-cols-3 md:grid-cols-5 lg:grid-cols-10">
+            <TabsList className="grid w-full grid-cols-3 gap-2 md:grid-cols-5 lg:grid-cols-10 md:gap-4">
               {tabs.map(tab => (
-                <TabsTrigger key={tab.value} value={tab.value}>
+                <TabsTrigger key={tab.value} value={tab.value} className={`border ${activeTab === tab.value ? 'border-[#7E4108] shadow' : 'border-transparent'} rounded-md text-center text-[#7E4108] font-semibold hover:bg-[#7E4108] hover:text-white transition-all`}>
                   {t(tab.label)}
                 </TabsTrigger>
               ))}
@@ -164,7 +163,7 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
           {tabs.map(tab => (
             <TabsContent key={tab.value} value={tab.value} className="mt-4">
               <h2 className="text-2xl font-semibold mb-4 text-[#7E4108]">
-                {t(tab.label)}
+                {t(tab.label)} <span className='text-sm'>{t(tab.label === 'Moquecas' ? '- todas as moquecas acompanha arroz, pirão de peixe e uma deliciosa farofa com banana da terra' : '')}</span>
               </h2>
               <img
                 src={tabImages[tab.value as keyof typeof tabImages]}

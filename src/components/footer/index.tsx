@@ -1,81 +1,94 @@
+'use client'
+
 import Image from 'next/image'
-import { Phone, MapPin, Instagram, Facebook } from 'lucide-react'
+import { Phone, MapPin, Instagram } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Ifood } from '../icons/ifood'
 
 export function Footer() {
+  const pathname = usePathname()
+
+  const isDarkBg = pathname.includes('menu') || pathname.includes('sauces')
+  const bgColor = isDarkBg ? 'bg-[#734108]' : 'bg-[#FCFDFE]'
+  const textColor = isDarkBg ? 'text-[#FCFDFE]' : 'text-black'
+  const highlightColor = isDarkBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
+  const subTextColor = isDarkBg ? 'text-gray-300' : 'text-gray-700'
+  const iconColor = isDarkBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
+
   return (
-    <footer className="bg-[#FCFDFE] text-black py-16 border-t border-[#734108]">
+    <footer className={`${bgColor} ${textColor} py-16 border-t border-[#734108]`}>
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-start space-y-10 md:space-y-0 text-center md:text-left">
         <div className="space-y-5">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#7E4108]">
+          <h2 className={`text-3xl md:text-4xl font-bold ${highlightColor}`}>
             Horários
           </h2>
           <div className="text-lg space-y-2">
-            <p className="font-bold text-[#7E4108]">
+            <p className={`font-bold ${highlightColor}`}>
               Segunda:{' '}
-              <span className="font-normal text-gray-700">Fechado</span>
+              <span className={`font-normal ${subTextColor}`}>Fechado</span>
             </p>
-            <p className="font-bold text-[#7E4108]">
+            <p className={`font-bold ${highlightColor}`}>
               Terça:{' '}
-              <span className="font-normal text-gray-700">12:00 às 15:00</span>
+              <span className={`font-normal ${subTextColor}`}>12:00 às 15:00</span>
             </p>
-            <p className="font-bold text-[#7E4108]">
+            <p className={`font-bold ${highlightColor}`}>
               Quarta á Sexta:{' '}
-              <span className="font-normal text-gray-700">
+              <span className={`font-normal ${subTextColor}`}>
                 12:00 às 15:00 - 18 ás 22:00
               </span>
             </p>
-            <p className="font-bold text-[#7E4108]">
+            <p className={`font-bold ${highlightColor}`}>
               Sábado:{' '}
-              <span className="font-normal text-gray-700">12:00 às 22:00</span>
+              <span className={`font-normal ${subTextColor}`}>12:00 às 22:00</span>
             </p>
-            <p className="font-bold text-[#7E4108]">
+            <p className={`font-bold ${highlightColor}`}>
               Domingo:{' '}
-              <span className="font-normal text-gray-700">12:00 às 17:00</span>
+              <span className={`font-normal ${subTextColor}`}>12:00 às 17:00</span>
             </p>
-            <p className="font-bold text-[#7E4108]">
+            <p className={`font-bold ${highlightColor}`}>
               Feriados:{' '}
-              <span className="font-normal text-gray-700">12:00 às 16:00</span>
+              <span className={`font-normal ${subTextColor}`}>12:00 às 16:00</span>
             </p>
           </div>
 
           <div className="space-y-2">
             <p className="flex items-center justify-center md:justify-start space-x-2">
-              <Phone
-                className="text-[#7E4108]"
-                size={20}
-                aria-label="Telefone"
-              />
-              <span className="font-bold text-[#7E4108]">
-                <span className="font-normal text-gray-700">
+              <Phone className={`${iconColor}`} size={20} aria-label="Telefone" />
+              <span className={`font-bold ${highlightColor}`}>
+                <span className={`font-normal ${subTextColor}`}>
                   (11) 5052-6890
                 </span>
               </span>
             </p>
             <p className="flex items-center justify-center md:justify-start sm:space-x-2">
-              <MapPin
-                className="text-[#7E4108]"
-                size={20}
-                aria-label="Endereço"
-              />
-              <span className="font-bold text-[#7E4108]">
+              <MapPin className={`${iconColor}`} size={20} aria-label="Endereço" />
+              <span className={`font-bold ${highlightColor}`}>
                 Endereço:{' '}
-                <span className="font-normal text-gray-700">
+                <span className={`font-normal ${subTextColor}`}>
                   Av. Moema, 265 - Moema, São Paulo
                 </span>
               </span>
             </p>
-            <p className="text-gray-700">Rod BR356 - 2500 - loja R02</p>
+            <p className={`${subTextColor}`}>Rod BR356 - 2500 - loja R02</p>
           </div>
 
           <div className="flex justify-center md:justify-start space-x-4 mt-4">
             <a
               href="https://www.instagram.com/badejorestaurantesp/"
               aria-label="Instagram"
-              className="text-[#7E4108] hover:text-gray-600"
+              className={`${iconColor}`}
             >
               <Instagram size={28} />
             </a>
+            <a
+                href="https://www.ifood.com.br/delivery/sao-paulo-sp/badejo-moema-moema/117956af-3416-4b26-83ed-"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ifood"
+              >
+                <Ifood width={32} height={32} />
+              </a>
           </div>
 
           <p className="hidden sm:block text-xs text-gray-500 mt-4">
@@ -84,25 +97,25 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-center md:items-start space-y-3">
-          <h3 className="text-2xl font-bold text-[#7E4108]">Navegação</h3>
+          <h3 className={`text-2xl font-bold ${highlightColor}`}>Navegação</h3>
           <nav className="flex flex-col space-y-2">
             <Link
               href="/"
-              className="text-gray-700 hover:text-[#7E4108]"
+              className={`${subTextColor} hover:${highlightColor}`}
               aria-label="Ir para a página inicial"
             >
               Início
             </Link>
             <Link
               href="/menu"
-              className="text-gray-700 hover:text-[#7E4108]"
+              className={`${subTextColor} hover:${highlightColor}`}
               aria-label="Ver o menu"
             >
               Cardápio
             </Link>
             <Link
               href="/sauces"
-              className="text-gray-700 hover:text-[#7E4108]"
+              className={`${subTextColor} hover:${highlightColor}`}
               aria-label="Reservar uma mesa"
             >
               Molhos

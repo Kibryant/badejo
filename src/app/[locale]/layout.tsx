@@ -8,7 +8,8 @@ import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'Restaurante Badejo',
-  description: 'O melhor restaurante de frutos do mar da cidade de S!',
+  description: 'O melhor restaurante de frutos do mar da cidade de São Paulo.',
+  creator: 'Arthur Gustavo Souza Silva Nascimento',
 }
 
 const playfair_display = Playfair_Display({

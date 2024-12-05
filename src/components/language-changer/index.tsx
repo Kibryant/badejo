@@ -12,7 +12,14 @@ import {
   SelectValue,
 } from '../ui/select'
 
-export default function LanguageChanger() {
+const languageOptions = [
+  { value: 'en', label: 'English', flag: '🇺🇸' },
+  { value: 'pt-BR', label: 'Português (Brasil)', flag: '🇧🇷' },
+  { value: 'ja', label: '日本語', flag: '🇯🇵' },
+  { value: 'zh', label: '中文', flag: '🇨🇳' },
+]
+
+export function LanguageChanger() {
   const { i18n } = useTranslation()
   const currentLocale = i18n.language
   const router = useRouter()
@@ -40,15 +47,19 @@ export default function LanguageChanger() {
 
   return (
     <Select onValueChange={handleChange} value={currentLocale}>
-      <SelectTrigger className="max-w-40">
+      <SelectTrigger className="max-w-40 flex items-center space-x-2 rounded-full">
         <SelectValue placeholder="Select a language" />
       </SelectTrigger>
 
       <SelectContent>
-        <SelectItem value="en">English</SelectItem>
-        <SelectItem value="pt-BR">Português (Brasil)</SelectItem>
-        <SelectItem value="ja">日本語</SelectItem>
-        <SelectItem value="zh">中文</SelectItem>
+        {languageOptions.map(({ value, label, flag }) => (
+          <SelectItem key={value} value={value}>
+            <span className="flex items-center space-x-2">
+              <span className="text-xl">{flag}</span>
+              <span>{label}</span>
+            </span>
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   )

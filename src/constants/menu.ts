@@ -28,17 +28,29 @@ export const menuData: MenuData = {
       name: 'Couvert Mix',
       price: '119,00',
       description:
-        'Um combinado variado de entradas deliciosas para começar a refeição.',
+        'Um combinado variado de entradas deliciosas, contendo iscas de peixe, lulas em anéis, bolinhos de bacalhau, camarões empanados e mexilhões ao vinagrete.',
     },
     {
-      name: 'Casquinha de Siri ou Aratu',
+      name: 'Iscas de Linguado (350g)',
+      price: '75,00',
+      description:
+        'Pedaços crocantes de linguado, levemente empanados e fritos à perfeição.',
+    },
+    {
+      name: 'Iscas de Badejo (350g)',
+      price: '99,00',
+      description:
+        'Porção generosa de badejo fresco em iscas, empanadas e douradas.',
+    },
+    {
+      name: 'Puro Catado de Marisco',
       price: '39,00',
       description: 'Casquinha crocante recheada com siri ou aratu temperado.',
     },
     {
-      name: 'Casquinha de Lagosta Gratinada',
+      name: 'Casquinha de Lagosta',
       price: '59,00',
-      description: 'Lagosta suculenta gratinada em uma casquinha crocante.',
+      description: 'Pedaços de lagosta fatiados, grelhados com queijo parmesão.',
     },
     {
       name: 'Mexilhões ao Vinagrete (250g)',
@@ -49,12 +61,12 @@ export const menuData: MenuData = {
       name: 'Frigideira de Mexilhões (250g)',
       price: '59,00',
       description:
-        'Mexilhões salteados e temperados, servidos diretamente na frigideira.',
+        'Mexilhões salteados e temperados, puxados na frigideira.',
     },
     {
       name: 'Vinagrete de Lagosta com Lula',
       price: '129,00',
-      description: 'Lagosta e lulas frescas servidas com vinagrete especial.',
+      description: 'Pedaços de Lagosta e lulas frescas servidas com vinagrete especial.',
     },
     {
       name: 'Vinagrete de Polvo e Lagosta',
@@ -95,7 +107,7 @@ export const menuData: MenuData = {
     {
       name: 'Mexilhões Empanados (250g)',
       price: '99,00',
-      description: 'Mexilhões crocantes empanados e fritos.',
+      description: 'Mexilhões empanados e fritos.',
     },
     {
       name: 'Camarões Rosa ao Catupiry (200g)',
@@ -113,19 +125,7 @@ export const menuData: MenuData = {
       name: 'Ostras Frescas (6un)',
       price: '49,00',
       description:
-        'Deliciosas ostras frescas, servidas em meia dúzia com acompanhamentos clássicos.',
-    },
-    {
-      name: 'Iscas de Linguado (200g)',
-      price: '75,00',
-      description:
-        'Pedaços crocantes de linguado, levemente empanados e fritos à perfeição.',
-    },
-    {
-      name: 'Iscas de Badejo (200g)',
-      price: '99,00',
-      description:
-        'Porção generosa de badejo fresco em iscas, empanadas e douradas.',
+        'Deliciosas ostras frescas, acompanhadas por limão e servidas sobre cubos de gelo.',
     },
     {
       name: 'Lulas em Anéis (250g)',
@@ -172,7 +172,7 @@ export const menuData: MenuData = {
     {
       name: 'De Badejo',
       description:
-        'Moqueca tradicional com badejo, cozido em leite de coco e temperos típicos da culinária paulista.',
+        'Postas de badejo cozidos, preparados à tradição capixaba',
       smallPortionPrice: 125.0,
       largePortionPrice: 249.0,
     },
@@ -186,7 +186,7 @@ export const menuData: MenuData = {
     {
       name: 'De Camarões Rosa',
       description:
-        'Moqueca de camarões rosa de grande porte, em um molho rico de leite de coco e dendê.',
+        'Moqueca de camarões rosa selecionados',
       smallPortionPrice: 125.0,
       largePortionPrice: 249.0,
     },
@@ -240,25 +240,25 @@ export const menuData: MenuData = {
   ],
   bobos: [
     {
-      name: 'De Camarões Rosinha (200g)',
+      name: 'De Camarões Rosinha (200g) 1P',
       description:
         'Bobó de camarão rosinha, uma deliciosa mistura de camarões com purê de mandioca e leite de coco.',
       price: 110.0,
     },
     {
-      name: 'De Camarões Rosinha (400g)',
+      name: 'De Camarões Rosinha (400g) 2P',
       description:
         'Bobó de camarões rosinha em porção generosa, perfeito para compartilhar.',
       price: 220.0,
     },
     {
-      name: 'De Camarões Rosa (200g)',
+      name: 'De Camarões Rosa (200g) 1P',
       description:
         'Bobó feito com camarões rosa, trazendo um toque de sofisticação à receita tradicional.',
       price: 125.0,
     },
     {
-      name: 'De Camarões Rosa (400g)',
+      name: 'De Camarões Rosa (400g) 2P',
       description:
         'Bobó de camarões rosa em porção maior, ideal para quem busca sabor e quantidade.',
       price: 249.0,
@@ -276,6 +276,18 @@ export const menuData: MenuData = {
       description:
         'Prato de badejo ou abadejo frito ou grelhado, acompanhado de purê de batata e arroz.',
       price: 125.0,
+    },
+    {
+      name: 'Paella para 4 Pessoas',
+      description:
+        'Uma paella rica em sabores do mar, perfeita para compartilhar com a família ou amigos.',
+      price: ' 558,00',
+    },
+    {
+      name: 'Paella para 2 Pessoas',
+      description:
+        'Abadejo, Bacalhau, Camarões Rosa, Camarões Rosinha, Lulas e Mexilhões. Decorado com Camarões Rosa Inteiros e Caudas de Lagosta. Ideal para um jantar especial a dois. Tempo de preparo: ~ 50 minutos.',
+      price: ' 339,00',
     },
     {
       name: 'Com Purê de Batata e Arroz (400g)',
@@ -299,22 +311,22 @@ export const menuData: MenuData = {
       name: 'Ao molho de Camarões Rosinha',
       description:
         'Badejo ou abadejo ao molho de camarões rosinha, uma opção deliciosa e rica em frutos do mar.',
-      price: 249.0,
+      price: 278.0,
     },
     {
       name: 'Ao molho de Camarões Rosa',
       description:
         'Badejo ou abadejo ao molho de camarões rosa, um prato refinado e cheio de sabor.',
-      price: 278.0,
+      price: 298.0,
     },
     {
-      name: 'Salmão com Alcaparraz e Arroz com Brócolis (200g)',
+      name: 'Salmão com Alcaparras e Arroz com Brócolis (200g)',
       description:
         'Salmão grelhado com alcaparras, acompanhado de arroz com brócolis.',
       price: 298.0,
     },
     {
-      name: 'Salmão com Alcaparraz e Arroz com Brócolis (400g)',
+      name: 'Salmão com Alcaparras e Arroz com Brócolis (400g)',
       description:
         'Versão maior do salmão grelhado com alcaparras, servido com arroz com brócolis.',
       price: 99.0,
@@ -332,18 +344,6 @@ export const menuData: MenuData = {
       description:
         'Badejo (300g), Lagosta (200g), Camarões Rosa (200g), Camarões Rosinha (100g), Lulas (200g) e Mexilhões (100g). A versão reduzida do prato tradicional, perfeita para grupos menores.',
       price: ' 448,00',
-    },
-    {
-      name: 'Paella para 4 Pessoas',
-      description:
-        'Uma paella rica em sabores do mar, perfeita para compartilhar com a família ou amigos.',
-      price: ' 558,00',
-    },
-    {
-      name: 'Paella para 2 Pessoas',
-      description:
-        'Abadejo, Bacalhau, Camarões Rosa, Camarões Rosinha, Lulas e Mexilhões. Decorado com Camarões Rosa Inteiros e Caudas de Lagosta. Ideal para um jantar especial a dois. Tempo de preparo: 50 minutos.',
-      price: ' 389,00',
     },
     {
       name: 'Titanic para 4 Pessoas',
@@ -410,13 +410,13 @@ export const menuData: MenuData = {
     {
       name: 'Risoto de Camarões Rosinha',
       description:
-        'Risoto cremoso acompanhado de camarões rosinha, ideal para quem aprecia frutos do mar.',
+        'Risoto acompanhado de camarões rosinha, ideal para quem aprecia frutos do mar.',
       price: ' 109,00',
     },
     {
       name: 'Risoto de Camarões Rosa',
       description:
-        'Risoto cremoso com camarões rosa, trazendo sabores intensos e marcantes.',
+        'Risoto com camarões rosa, trazendo sabores intensos e marcantes.',
       price: ' 129,00',
     },
     {
@@ -429,7 +429,7 @@ export const menuData: MenuData = {
       name: 'Espaguete com Camarões Rosa e Rosinha',
       description:
         'Espaguete combinado com camarões rosa e rosinha, ideal para quem gosta de uma massa leve e saborosa.',
-      price: ' 179,00',
+      price: ' 99,00',
     },
     {
       name: 'Espaguete com Frutos do Mar',

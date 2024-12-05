@@ -2,6 +2,7 @@ import { Clock, Phone, Instagram, FishIcon } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
+import { Ifood } from '@/components/icons/ifood'
 
 interface PageProps {
   params: {
@@ -300,9 +301,10 @@ export default async function Page({ params: { locale } }: PageProps) {
 
         <section className="bg-[#7E4108] text-[#FCFDFE] py-16 sm:py-40">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-4xl font-bold mb-3">
               Siga-nos nas Redes Sociais
             </h2>
+
             <div className="w-24 h-1 bg-[#FCFDFE] mx-auto mb-12" />
 
             <p className="mb-8 text-lg max-w-xl mx-auto">
@@ -311,7 +313,7 @@ export default async function Page({ params: { locale } }: PageProps) {
               sociais. Estamos sempre postando conteúdo delicioso!
             </p>
 
-            <div className="flex justify-center space-x-12">
+            <div className="flex justify-center space-x-8">
               <a
                 href="https://www.instagram.com/badejorestaurantesp"
                 target="_blank"
@@ -319,10 +321,16 @@ export default async function Page({ params: { locale } }: PageProps) {
                 className="hover:scale-110 transition-transform duration-200"
                 aria-label="Instagram"
               >
-                <Instagram
-                  size={48}
-                  className="hover:text-[#C13584] transition-colors duration-200"
-                />
+                <Instagram size={44} />
+              </a>{' '}
+              <a
+                href="https://www.ifood.com.br/delivery/sao-paulo-sp/badejo-moema-moema/117956af-3416-4b26-83ed-"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:scale-110 transition-transform duration-200"
+                aria-label="Instagram"
+              >
+                <Ifood width={52} height={52} />
               </a>
             </div>
           </div>
