@@ -70,6 +70,7 @@ export default async function Page({ params: { locale } }: PageProps) {
           <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-12">
             <div className="mb-8 lg:mb-0 lg:w-1/2">
               <Image
+                quality={100}
                 src="/badejo-inside.jpg"
                 alt="História do Badejo"
                 className="rounded-lg shadow-lg w-full h-auto"
@@ -128,10 +129,13 @@ export default async function Page({ params: { locale } }: PageProps) {
                 </p>
               </div>
               <div className="mb-8 lg:mb-0 lg:w-1/2">
-                <img
+                <Image
+                  quality={100}
                   src="/moqueca-capixaba.jpg"
                   alt="História do Badejo"
                   className="rounded-lg shadow-lg w-full object-cover h-[600px]"
+                  width={800}
+                  height={600}
                 />
               </div>
             </div>
@@ -146,10 +150,13 @@ export default async function Page({ params: { locale } }: PageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <img
+              <Image
+                quality={100}
                 src="/camarao-coco.jpg"
                 alt="Prato Badejo - Frutos do Mar"
                 className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
+                width={800}
+                height={600}
               />
 
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
@@ -162,10 +169,13 @@ export default async function Page({ params: { locale } }: PageProps) {
               </p>
             </div>
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <img
+              <Image
+                quality={100}
                 src="/casquinha-de-siri.jpg"
                 alt="Prato Badejo - Frutos do Mar"
                 className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
+                width={800}
+                height={600}
               />
 
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
@@ -178,10 +188,13 @@ export default async function Page({ params: { locale } }: PageProps) {
               </p>
             </div>
             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              <img
+              <Image
+                quality={100}
                 src="/moqueca-mista.jpg"
                 alt="Prato Badejo - Frutos do Mar"
                 className="rounded-lg w-full h-auto max-h-[400px] mb-4 object-cover"
+                width={800}
+                height={600}
               />
 
               <h3 className="text-xl font-semibold mb-2 text-[#7E4108]">
