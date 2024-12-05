@@ -14,7 +14,7 @@ import {
 
 const languageOptions = [
   { value: 'en', label: 'English', flag: '🇺🇸' },
-  { value: 'pt-BR', label: 'Português (Brasil)', flag: '🇧🇷' },
+  { value: 'pt-BR', label: 'Português', flag: '🇧🇷' },
   { value: 'ja', label: '日本語', flag: '🇯🇵' },
   { value: 'zh', label: '中文', flag: '🇨🇳' },
 ]
@@ -47,7 +47,7 @@ export function LanguageChanger() {
 
   return (
     <Select onValueChange={handleChange} value={currentLocale}>
-      <SelectTrigger className="max-w-40 flex items-center space-x-2 rounded-full">
+      <SelectTrigger className="flex items-center space-x-2 rounded-full sm:max-w-40 bg-transparent text-white">
         <SelectValue placeholder="Select a language" />
       </SelectTrigger>
 

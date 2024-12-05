@@ -12,8 +12,8 @@ export function Footer() {
   const isDarkBg = pathname.includes('menu') || pathname.includes('sauces')
   const bgColor = isDarkBg ? 'bg-[#734108]' : 'bg-[#FCFDFE]'
   const textColor = isDarkBg ? 'text-[#FCFDFE]' : 'text-black'
-  const highlightColor = isDarkBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
-  const subTextColor = isDarkBg ? 'text-gray-300' : 'text-gray-700'
+  const highlightColor = isDarkBg ? 'text-[#FCFDFE]' : 'tex t-[#7E4108]'
+  const subTextColor = isDarkBg ? 'text-zinc-300' : 'text-zinc-700'
   const iconColor = isDarkBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
 
   return (
@@ -69,8 +69,7 @@ export function Footer() {
                   Av. Moema, 265 - Moema, São Paulo
                 </span>
               </span>
-            </p>
-            <p className={`${subTextColor}`}>Rod BR356 - 2500 - loja R02</p>
+            </p> 
           </div>
 
           <div className="flex justify-center md:justify-start space-x-4 mt-4">
@@ -91,7 +90,7 @@ export function Footer() {
               </a>
           </div>
 
-          <p className="hidden sm:block text-xs text-gray-500 mt-4">
+          <p className="hidden sm:block text-xs text-zinc-300 mt-4">
             Copyright ©2024 Badejo.
           </p>
         </div>
@@ -133,7 +132,7 @@ export function Footer() {
           />
         </div>
 
-        <p className="block sm:hidden text-xs text-gray-500 mt-4">
+        <p className="block sm:hidden text-xs text-zinc-300 mt-4">
           Copyright ©2024 Badejo.
         </p>
       </div>

@@ -22,7 +22,7 @@ export function Header() {
           <li>
             <Link
               href="/sauces"
-              className="bg-[#FCFDFE] text-[#7E4108] py-2 px-4 rounded-full font-bold hover:underline"
+              className="bg-[#FCFDFE] text-[#7E4108] pb-2 pt-3 px-4 rounded-full text-center font-bold hover:underline"
             >
               Molhos
             </Link>

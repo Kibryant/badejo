@@ -19,7 +19,8 @@
   "Bebidas": "饮料",
 
   "Couvert Mix": "混合开胃拼盘",
-  "Puro Catado de Marisco": "螃蟹或海螯蟹贝壳",
+  "Puro catado de marisco": "螃蟹或海螯蟹贝壳",
+  "Casquinha de Siri ou Aratu": "螃蟹或阿拉图蟹贝壳",
   "Casquinha de Lagosta Gratinada": "焗烤龙虾贝壳",
   "Mexilhões ao Vinagrete (250g)": "醋汁青口贝 (250克)",
   "Frigideira de Mexilhões (250g)": "煎青口贝 (250克)",
@@ -46,13 +47,14 @@
   "Camarão Frito (250g)": "炸虾 (250克)",
   "Batata Frita": "炸薯条",
 
-
-  "De Badejo": "海鲈摩克卡",
-  "De Camarões Rosinha": "小粉虾摩克卡",
-  "De Camarões Rosa": "粉虾摩克卡",
-  "De Lagosta": "龙虾摩克卡",
-  "De Siri": "螃蟹摩克卡",
-  "De Peixe": "鱼摩克卡",
+  "De Badejo (200g) 1P": "巴德乔炖菜 (200g) 1人份",
+  "De Badejo (400g) 2P": "巴德乔炖菜 (400g) 2人份",
+  "De Lagosta (200g) 1P": "龙虾炖菜 (200g) 1人份",
+  "De Lagosta (400g) 2P": "龙虾炖菜 (400g) 2人份",
+  "De Siri (200g) 1P": "蟹肉炖菜 (200g) 1人份",
+  "De Siri (400g) 2P": "蟹肉炖菜 (400g) 2人份",
+  "De Peixe (200g) 1P": "鱼炖菜 (200g) 1人份",
+  "De Peixe (400g) 2P": "鱼炖菜 (400g) 2人份",
 
   "De Badejo (400g) com Camarões Rosinha (200g)": "海鲈 (400克) 配小粉虾 (200克)",
   "De Badejo (400g) com Camarões Rosa (200g)": "海鲈 (400克) 配粉虾 (200克)",
@@ -182,6 +184,11 @@
   "Porção de lulas frescas, perfeitas para acompanhar as moquecas.": "一份新鲜鱿鱼，完美搭配炖锅菜。",
   "Mexilhões frescos para incrementar ainda mais seu prato de frutos do mar.": "新鲜青口贝，为您的海鲜菜肴锦上添花。",
   "Banana da terra frita, um acompanhamento doce e perfeito para contrastar com os sabores das moquecas.": "炸大蕉，甜味配菜，与炖锅的味道形成完美对比。",
+  "Moqueca clássica de peixes da estação": "经典时令鱼炖菜",
+  "Moqueca de camarões rosa selecionados": "精选玫瑰虾炖菜",
+  "Moqueca preparada com camarões rosinha frescos, combinando sabores do mar com temperos brasileiros.": "用新鲜粉红虾制作的炖菜，结合了海鲜风味和巴西香料。",
+  "Postas de badejo cozidos, preparados à tradição capixaba": "按卡皮夏巴传统方式制作的巴德乔鱼排。",
+  
   "Cervejas": "啤酒",
   "Chopps": "生啤酒",
   "Sucos e refrigerantes": "果汁和软饮料",

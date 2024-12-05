@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   Card,
@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -21,6 +22,7 @@ import {
 import { menuData, type MenuItem } from '@/constants/menu'
 import { drinkCategories } from '@/constants/drinks'
 import { useTranslation } from 'react-i18next'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 const tabImages = {
   starters: '/starters.jpg',
@@ -56,8 +58,20 @@ interface SeafoodMenuProps {
 
 export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
   const { t } = useTranslation(namespace)
+  const router = useRouter()
+  const searchParams = useSearchParams()
 
   const [activeTab, setActiveTab] = useState('starters')
+  const initialTab = searchParams.get('tab') || 'starters'
+
+  const handleTabChange = (newTab: string) => {
+    setActiveTab(newTab)
+    router.push(`?tab=${newTab}`, { scroll: false })
+  }
+
+  useEffect(() => {
+    setActiveTab(initialTab)
+  }, [initialTab])
 
   const renderMenuItems = (items: MenuItem[]) => {
     return items.map((item, index) => (
@@ -75,37 +89,35 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
           </span>
           <Dialog>
             <DialogTrigger asChild>
-              <Button variant="outline">{t('Detalhes')}</Button>
+              <Button
+                variant="outline"
+                className="transition-transform hover:scale-105"
+              >
+                {t('Detalhes')}
+              </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[500px] rounded-lg shadow-lg bg-white">
               <DialogHeader>
-                <DialogTitle className="text-[#7E4108]">
+                <DialogTitle className="text-[#7E4108] text-2xl font-semibold text-center">
                   {t(item.name)}
                 </DialogTitle>
-                <DialogDescription>{t(item.description)}</DialogDescription>
               </DialogHeader>
-              {item.price && (
-                <div className="grid gap-4 py-4">
-                  <p>
-                    {t('Preço')} {item.price}
-                  </p>
+              <div className="grid gap-6 py-6 px-4">
+                <div className="text-gray-700">
+                  <p className="text-lg">{t(item.description)}</p>
                 </div>
-              )}
-              {item.smallPortionPrice && (
-                <div className="grid gap-4 py-4">
-                  <p>
-                    {t('200g, serve 1 pessoa')}: R${item.smallPortionPrice.toFixed(2)}
-                  </p>
+                <div className="text-[#7E4108] text-lg font-semibold flex justify-between">
+                  <span>{t('Preço')}:</span>
+                  <span>R${item.price}</span>
                 </div>
-              )}
-
-              {item.largePortionPrice && (
-                <div className="grid gap-4 py-4">
-                  <p>
-                    {t('400g, serve 2 pessoas')}: R${item.largePortionPrice.toFixed(2)}
-                  </p>
-                </div>
-              )}
+              </div>
+              <div className="flex justify-end gap-4 px-4">
+                <DialogClose asChild>
+                  <Button variant="outline" className="hover:bg-gray-200">
+                    {t('Fechar')}
+                  </Button>
+                </DialogClose>
+              </div>
             </DialogContent>
           </Dialog>
         </CardFooter>
@@ -144,12 +156,16 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
         <div className="flex justify-between items-center">
           <Tabs
             value={activeTab}
-            onValueChange={setActiveTab}
+            onValueChange={handleTabChange}
             className="w-full h-40 md:h-20"
           >
             <TabsList className="grid w-full grid-cols-3 gap-2 md:grid-cols-5 lg:grid-cols-10 md:gap-4">
               {tabs.map(tab => (
-                <TabsTrigger key={tab.value} value={tab.value} className={`border ${activeTab === tab.value ? 'border-[#7E4108] shadow' : 'border-transparent'} rounded-md text-center text-[#7E4108] font-semibold hover:bg-[#7E4108] hover:text-white transition-all`}>
+                <TabsTrigger
+                  key={tab.value}
+                  value={tab.value}
+                  className={`border ${activeTab === tab.value ? 'border-[#7E4108] shadow' : 'border-transparent'} rounded-md text-center text-[#7E4108] font-semibold hover:bg-[#7E4108] hover:text-white transition-all bg-transparent   `}
+                >
                   {t(tab.label)}
                 </TabsTrigger>
               ))}
@@ -163,7 +179,14 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
           {tabs.map(tab => (
             <TabsContent key={tab.value} value={tab.value} className="mt-4">
               <h2 className="text-2xl font-semibold mb-4 text-[#7E4108]">
-                {t(tab.label)} <span className='text-sm'>{t(tab.label === 'Moquecas' ? '- todas as moquecas acompanha arroz, pirão de peixe e uma deliciosa farofa com banana da terra' : '')}</span>
+                {t(tab.label)}{' '}
+                <span className="text-sm">
+                  {t(
+                    tab.label === 'Moquecas'
+                      ? '- todas as moquecas acompanha arroz, pirão de peixe e uma deliciosa farofa com banana da terra'
+                      : ''
+                  )}
+                </span>
               </h2>
               <img
                 src={tabImages[tab.value as keyof typeof tabImages]}

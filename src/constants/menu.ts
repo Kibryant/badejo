@@ -3,9 +3,7 @@ import { drinks } from './drinks'
 export type MenuItem = {
   name: string
   description: string
-  price?: string | number
-  smallPortionPrice?: number
-  largePortionPrice?: number
+  price: string | number
 }
 
 type MenuData = {
@@ -43,14 +41,15 @@ export const menuData: MenuData = {
         'Porção generosa de badejo fresco em iscas, empanadas e douradas.',
     },
     {
-      name: 'Puro Catado de Marisco',
+      name: 'Casquinha de Siri ou Aratu',
       price: '39,00',
-      description: 'Casquinha crocante recheada com siri ou aratu temperado.',
+      description: 'Puro catado de marisco',
     },
     {
       name: 'Casquinha de Lagosta',
       price: '59,00',
-      description: 'Pedaços de lagosta fatiados, grelhados com queijo parmesão.',
+      description:
+        'Pedaços de lagosta fatiados, grelhados com queijo parmesão.',
     },
     {
       name: 'Mexilhões ao Vinagrete (250g)',
@@ -60,13 +59,13 @@ export const menuData: MenuData = {
     {
       name: 'Frigideira de Mexilhões (250g)',
       price: '59,00',
-      description:
-        'Mexilhões salteados e temperados, puxados na frigideira.',
+      description: 'Mexilhões salteados e temperados, puxados na frigideira.',
     },
     {
       name: 'Vinagrete de Lagosta com Lula',
       price: '129,00',
-      description: 'Pedaços de Lagosta e lulas frescas servidas com vinagrete especial.',
+      description:
+        'Pedaços de Lagosta e lulas frescas servidas com vinagrete especial.',
     },
     {
       name: 'Vinagrete de Polvo e Lagosta',
@@ -170,46 +169,70 @@ export const menuData: MenuData = {
   ],
   moquecas: [
     {
-      name: 'De Badejo',
-      description:
-        'Postas de badejo cozidos, preparados à tradição capixaba',
-      smallPortionPrice: 125.0,
-      largePortionPrice: 249.0,
+      name: 'De Badejo (200g) 1P',
+      description: 'Postas de badejo cozidos, preparados à tradição capixaba',
+      price: '125,00',
     },
     {
-      name: 'De Camarões Rosinha',
+      name: 'De Badejo (400g) 2P',
+      description: 'Postas de badejo cozidos, preparados à tradição capixaba',
+      price: '249,00',
+    },
+    {
+      name: 'De Camarões Rosinha (200g) 1P',
       description:
         'Moqueca preparada com camarões rosinha frescos, combinando sabores do mar com temperos brasileiros.',
-      smallPortionPrice: 110.0,
-      largePortionPrice: 220.0,
+      price: '110,00',
     },
     {
-      name: 'De Camarões Rosa',
+      name: 'De Camarões Rosinha (400g) 2P',
       description:
-        'Moqueca de camarões rosa selecionados',
-      smallPortionPrice: 125.0,
-      largePortionPrice: 249.0,
+        'Moqueca preparada com camarões rosinha frescos, combinando sabores do mar com temperos brasileiros.',
+      price: '220,00',
     },
     {
-      name: 'De Lagosta',
+      name: 'De Camarões Rosa (200g) 1P',
+      description: 'Moqueca de camarões rosa selecionados',
+      price: '125,00',
+    },
+    {
+      name: 'De Camarões Rosa (400g) 2P',
+      description: 'Moqueca de camarões rosa selecionados',
+      price: '249,00',
+    },
+    {
+      name: 'De Lagosta (200g) 1P',
       description:
         'Moqueca luxuosa feita com lagosta fresca, ideal para os amantes de frutos do mar sofisticados.',
-      smallPortionPrice: 140.0,
-      largePortionPrice: 280.0,
+      price: '140.0',
     },
     {
-      name: 'De Siri',
+      name: 'De Lagosta (400g) 2P',
+      description:
+        'Moqueca luxuosa feita com lagosta fresca, ideal para os amantes de frutos do mar sofisticados.',
+      price: '280.0',
+    },
+    {
+      name: 'De Siri (200g) 1P',
       description:
         'Moqueca de siri com temperos brasileiros, rica em sabor e frescor.',
-      smallPortionPrice: 119.0,
-      largePortionPrice: 238.0,
+      price: '119.0',
     },
     {
-      name: 'De Peixe',
+      name: 'De Siri (400g) 2P',
       description:
-        'Moqueca clássica com peixe fresco, cozido em leite de coco e azeite de dendê.',
-      smallPortionPrice: 110.0,
-      largePortionPrice: 220.0,
+        'Moqueca de siri com temperos brasileiros, rica em sabor e frescor.',
+      price: '238.0',
+    },
+    {
+      name: 'De Peixe (200g) 1P',
+      description: 'Moqueca clássica de peixes da estação',
+      price: '110.0',
+    },
+    {
+      name: 'De Peixe (400g) 2P',
+      description: 'Moqueca clássica de peixes da estação',
+      price: '220.0',
     },
   ],
   combineds: [
@@ -281,13 +304,13 @@ export const menuData: MenuData = {
       name: 'Paella para 4 Pessoas',
       description:
         'Uma paella rica em sabores do mar, perfeita para compartilhar com a família ou amigos.',
-      price: ' 558,00',
+      price: '558,00',
     },
     {
       name: 'Paella para 2 Pessoas',
       description:
         'Abadejo, Bacalhau, Camarões Rosa, Camarões Rosinha, Lulas e Mexilhões. Decorado com Camarões Rosa Inteiros e Caudas de Lagosta. Ideal para um jantar especial a dois. Tempo de preparo: ~ 50 minutos.',
-      price: ' 339,00',
+      price: '339,00',
     },
     {
       name: 'Com Purê de Batata e Arroz (400g)',
@@ -337,55 +360,55 @@ export const menuData: MenuData = {
       name: 'Moqueca à Moda da Casa',
       description:
         'Badejo (600g), Lagosta (400g), Camarões Rosa (400g), Camarões Rosinha (200g), Lulas (400g) e Mexilhões (200g). Um prato completo e farto para quem deseja desfrutar de uma autêntica moqueca com frutos do mar variados.',
-      price: ' 768,00',
+      price: '768,00',
     },
     {
       name: '1/2 Moqueca à Moda da Casa',
       description:
         'Badejo (300g), Lagosta (200g), Camarões Rosa (200g), Camarões Rosinha (100g), Lulas (200g) e Mexilhões (100g). A versão reduzida do prato tradicional, perfeita para grupos menores.',
-      price: ' 448,00',
+      price: '448,00',
     },
     {
       name: 'Titanic para 4 Pessoas',
       description:
         'Um prato grandioso de frutos do mar, feito para surpreender e satisfazer todos à mesa.',
-      price: ' 568,00',
+      price: '568,00',
     },
     {
       name: 'Titanic para 2 Pessoas',
       description:
         'Filé de Abadejo grelhado acompanhado de Camarões Rosa empanados ao molho de camarões. Uma combinação perfeita para dois.',
-      price: ' 339,00',
+      price: '339,00',
     },
     {
       name: 'Peixe na Telha',
       description:
         'Um prato tradicional servido em telha de barro, garantindo um sabor autêntico e rústico.',
-      price: ' 279,00',
+      price: '279,00',
     },
     {
       name: 'Peixe na Telha com Camarões Rosa',
       description:
         'O clássico peixe na telha com um toque especial de camarões rosa, para os amantes de frutos do mar.',
-      price: ' 329,00',
+      price: '329,00',
     },
     {
       name: 'Peixe na Telha com Lagosta',
       description:
         'Peixe servido na telha com o toque refinado de lagosta. Uma escolha sofisticada e deliciosa.',
-      price: ' 349,00',
+      price: '349,00',
     },
     {
       name: 'Bacalhau à Moda Capixaba (450g)',
       description:
         'Bacalhau preparado ao estilo capixaba, trazendo sabores autênticos e bem temperados.',
-      price: ' 298,00',
+      price: '298,00',
     },
     {
       name: 'Bacalhau ao Forno (450g)',
       description:
         'Bacalhau assado no forno, suculento e saboroso, perfeito para uma refeição completa.',
-      price: ' 298,00',
+      price: '298,00',
     },
   ],
   individuals: [
@@ -393,49 +416,49 @@ export const menuData: MenuData = {
       name: 'Truta com Legumes no Vapor',
       description:
         'Truta servida com uma saudável porção de legumes preparados no vapor.',
-      price: ' 89,00',
+      price: '89,00',
     },
     {
       name: 'Truta com Arroz de Brócolis e Alcaparras',
       description:
         'Truta grelhada acompanhada de arroz de brócolis e alcaparras, um prato leve e saboroso.',
-      price: ' 89,00',
+      price: '89,00',
     },
     {
       name: 'Truta com Purê ou Batata Sauté',
       description:
         'Deliciosa truta servida com a opção de purê cremoso ou batata sauté.',
-      price: ' 89,00',
+      price: '89,00',
     },
     {
       name: 'Risoto de Camarões Rosinha',
       description:
         'Risoto acompanhado de camarões rosinha, ideal para quem aprecia frutos do mar.',
-      price: ' 109,00',
+      price: '109,00',
     },
     {
       name: 'Risoto de Camarões Rosa',
       description:
         'Risoto com camarões rosa, trazendo sabores intensos e marcantes.',
-      price: ' 129,00',
+      price: '129,00',
     },
     {
       name: 'Arroz de Polvo',
       description:
         'Polvo suculento servido com arroz temperado, uma escolha perfeita para os fãs de frutos do mar.',
-      price: ' 179,00',
+      price: '179,00',
     },
     {
       name: 'Espaguete com Camarões Rosa e Rosinha',
       description:
         'Espaguete combinado com camarões rosa e rosinha, ideal para quem gosta de uma massa leve e saborosa.',
-      price: ' 99,00',
+      price: '99,00',
     },
     {
       name: 'Espaguete com Frutos do Mar',
       description:
         'Espaguete servido com uma variedade de frutos do mar frescos.',
-      price: ' 110,00',
+      price: '110,00',
     },
   ],
   alternatives: [
@@ -443,30 +466,30 @@ export const menuData: MenuData = {
       name: 'Peito de Frango Grelhado (Purê ou Fritas)',
       description:
         'Peito de frango grelhado, servido com a opção de purê ou fritas, uma escolha leve e saborosa.',
-      price: ' 59,00',
+      price: '59,00',
     },
     {
       name: 'Filé Mignon com Fritas',
       description: 'Filé mignon grelhado acompanhado de batatas fritas.',
-      price: ' 99,00',
+      price: '99,00',
     },
     {
       name: 'Filé à Parmegiana',
       description:
         'Clássico filé à parmegiana, com molho de tomate e queijo derretido.',
-      price: ' 99,00',
+      price: '99,00',
     },
     {
       name: 'Espaguete com Picadinho de Filé Mignon ao Sugo',
       description:
         'Espaguete servido com picadinho de filé mignon ao molho sugo, uma refeição completa e saborosa.',
-      price: ' 69,00',
+      price: '69,00',
     },
     {
       name: 'Picanha Importada (300g)',
       description:
         'Picanha importada grelhada, perfeita para os amantes de carne.',
-      price: ' 120,00',
+      price: '120,00',
     },
   ],
   optionalAddOns: [
