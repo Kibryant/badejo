@@ -11,12 +11,13 @@ import {
   SelectItem,
   SelectValue,
 } from '../ui/select'
+import { Flags } from '../icons/flags'
 
 const languageOptions = [
-  { value: 'en', label: 'English', flag: '🇺🇸' },
-  { value: 'pt-BR', label: 'Português', flag: '🇧🇷' },
-  { value: 'ja', label: '日本語', flag: '🇯🇵' },
-  { value: 'zh', label: '中文', flag: '🇨🇳' },
+  { value: 'en', label: 'English', Flag: Flags.Us },
+  { value: 'pt-BR', label: 'Português', Flag: Flags.Br },
+  { value: 'ja', label: '日本語', Flag: Flags.Ja },
+  { value: 'zh', label: '中文', Flag: Flags.Zh },
 ]
 
 export function LanguageChanger() {
@@ -52,10 +53,10 @@ export function LanguageChanger() {
       </SelectTrigger>
 
       <SelectContent>
-        {languageOptions.map(({ value, label, flag }) => (
+        {languageOptions.map(({ value, label, Flag }) => (
           <SelectItem key={value} value={value}>
             <span className="flex items-center space-x-2">
-              <span className="text-xl">{flag}</span>
+              <Flag width={24} height={24} />
               <span>{label}</span>
             </span>
           </SelectItem>

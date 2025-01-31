@@ -29,24 +29,12 @@ export const menuData: MenuData = {
         'Um combinado variado de entradas deliciosas, contendo iscas de peixe, lulas em anéis, bolinhos de bacalhau, camarões empanados e mexilhões ao vinagrete.',
     },
     {
-      name: 'Iscas de Linguado (350g)',
-      price: '75,00',
-      description:
-        'Pedaços crocantes de linguado, levemente empanados e fritos à perfeição.',
-    },
-    {
-      name: 'Iscas de Badejo (350g)',
-      price: '99,00',
-      description:
-        'Porção generosa de badejo fresco em iscas, empanadas e douradas.',
-    },
-    {
       name: 'Casquinha de Siri ou Aratu',
       price: '39,00',
       description: 'Puro catado de marisco',
     },
     {
-      name: 'Casquinha de Lagosta',
+      name: 'Casquinha de Lagosta Gratinada',
       price: '59,00',
       description:
         'Pedaços de lagosta fatiados, grelhados com queijo parmesão.',
@@ -85,32 +73,32 @@ export const menuData: MenuData = {
     },
     {
       name: 'Lulas à Provençal (400g)',
-      price: '99,00',
+      price: '65,00',
       description: 'Lulas grelhadas à provençal com alho e salsa.',
     },
     {
       name: 'Salada Mista',
-      price: '65,00',
+      price: '47,00',
       description: 'Salada fresca com uma combinação de folhas e legumes.',
     },
     {
       name: 'Salada de Lagosta',
-      price: '47,00',
+      price: '89,00',
       description: 'Salada leve e refrescante com pedaços de lagosta.',
     },
     {
       name: 'Camarões Rosa à Paulista (200g)',
-      price: '89,00',
+      price: '99,00',
       description: 'Camarões rosa preparados à paulista, com alho e azeite.',
     },
     {
       name: 'Mexilhões Empanados (250g)',
-      price: '99,00',
+      price: '65,00',
       description: 'Mexilhões empanados e fritos.',
     },
     {
       name: 'Camarões Rosa ao Catupiry (200g)',
-      price: '65,00',
+      price: '119,00',
       description: 'Camarões rosa gratinados com catupiry.',
     },
     {
@@ -120,6 +108,18 @@ export const menuData: MenuData = {
     },
   ],
   portions: [
+    {
+      name: 'Iscas de Linguado (200g)',
+      price: '75,00',
+      description:
+        'Pedaços crocantes de linguado, levemente empanados e fritos à perfeição.',
+    },
+    {
+      name: 'Iscas de Badejo (200g)',
+      price: '99,00',
+      description:
+        'Porção generosa de badejo fresco em iscas, empanadas e douradas.',
+    },
     {
       name: 'Ostras Frescas (6un)',
       price: '49,00',
@@ -301,18 +301,6 @@ export const menuData: MenuData = {
       price: 125.0,
     },
     {
-      name: 'Paella para 4 Pessoas',
-      description:
-        'Uma paella rica em sabores do mar, perfeita para compartilhar com a família ou amigos.',
-      price: '558,00',
-    },
-    {
-      name: 'Paella para 2 Pessoas',
-      description:
-        'Abadejo, Bacalhau, Camarões Rosa, Camarões Rosinha, Lulas e Mexilhões. Decorado com Camarões Rosa Inteiros e Caudas de Lagosta. Ideal para um jantar especial a dois. Tempo de preparo: ~ 50 minutos.',
-      price: '339,00',
-    },
-    {
       name: 'Com Purê de Batata e Arroz (400g)',
       description:
         'Versão maior do prato com badejo ou abadejo, servido com purê de batata e arroz.',
@@ -346,13 +334,13 @@ export const menuData: MenuData = {
       name: 'Salmão com Alcaparras e Arroz com Brócolis (200g)',
       description:
         'Salmão grelhado com alcaparras, acompanhado de arroz com brócolis.',
-      price: 298.0,
+      price: 99.0,
     },
     {
       name: 'Salmão com Alcaparras e Arroz com Brócolis (400g)',
       description:
         'Versão maior do salmão grelhado com alcaparras, servido com arroz com brócolis.',
-      price: 99.0,
+      price: 198.0,
     },
   ],
   specials: [
@@ -397,6 +385,18 @@ export const menuData: MenuData = {
       description:
         'Peixe servido na telha com o toque refinado de lagosta. Uma escolha sofisticada e deliciosa.',
       price: '349,00',
+    },
+    {
+      name: 'Paella para 4 Pessoas',
+      description:
+        'Uma paella rica em sabores do mar, perfeita para compartilhar com a família ou amigos.',
+      price: '558,00',
+    },
+    {
+      name: 'Paella para 2 Pessoas',
+      description:
+        'Abadejo, Bacalhau, Camarões Rosa, Camarões Rosinha, Lulas e Mexilhões. Decorado com Camarões Rosa Inteiros e Caudas de Lagosta. Ideal para um jantar especial a dois. Tempo de preparo: ~ 50 minutos.',
+      price: '339,00',
     },
     {
       name: 'Bacalhau à Moda Capixaba (450g)',
