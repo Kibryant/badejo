@@ -1,5 +1,6 @@
 import { initTranslations } from '@/app/i18n'
 import { LanguageChanger } from '@/components/language-changer'
+import { LoadingSpinner } from '@/components/loading-spinner'
 import { SeafoodMenu } from '@/components/seafood-menu'
 import { TranslationsProvider } from '@/providers/translations-provider'
 import { Suspense } from 'react'
@@ -12,18 +13,22 @@ interface PageProps {
 
 const namespace = ['menu']
 
+export function mockDelay(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 export default async function Page({ params: { locale } }: PageProps) {
   const { t, resources } = await initTranslations(locale, namespace)
 
   return (
-    <Suspense fallback="loading...">
+    <Suspense fallback={<LoadingSpinner />}>
       <TranslationsProvider
         resources={resources}
         locale={locale}
         namespaces={namespace}
       >
         <div className="min-h-screen bg-[#FCFDFE] text-[#000000]">
-          <div className="bg-[#7E4108] text-center p-4 md:px-44">
+          <div className="bg-[#7E4108] text-center p-4 md:px-24">
             <LanguageChanger />
           </div>
           <main>

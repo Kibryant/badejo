@@ -3,6 +3,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Ifood } from '@/components/icons/ifood'
+import { DialogHeader } from '@/components/ui/dialog'
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog'
+import { Whatsapp } from '@/components/icons/whatsapp'
 
 interface PageProps {
   params: {
@@ -52,12 +61,49 @@ export default async function Page({ params: { locale } }: PageProps) {
               sofisticado. Pratos frescos e deliciosos preparados com paixão.
             </p>
 
-            <Link
-              href="/sauces"
-              className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] animate-bounce transition duration-400 delay-400 font-bold mt-6"
-            >
-              Conheça Nossos Molhos
-            </Link>
+            <Dialog>
+              <DialogTrigger className="bg-[#7E4108] text-[#FCFDFE] py-3 px-6 sm:py-4 sm:px-10 rounded-full shadow-lg hover:bg-[#5c3007] font-bold mt-6">
+                Faça sua Reserva
+              </DialogTrigger>
+              <DialogContent className="bg-[#F5F5F5] border border-gray-200 rounded-lg shadow-xl">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold text-[#7E4108]">
+                    Escolha como deseja fazer sua reserva
+                  </DialogTitle>
+                  <DialogDescription className="text-gray-600 mt-2">
+                    Clique em uma das opções abaixo para reservar sua mesa:
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col space-y-4 mt-6">
+                  <a
+                    href="https://api.whatsapp.com/send?phone=5511948919587&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20uma%20reserva%20para%20o%20restaurante%20Badejo%20em%20S%C3%A3o%20Paulo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-transparent text-[#7E4108] py-3 px-6 rounded-lg text-center font-semibold shadow-md flex items-center justify-center border border-[#7E4108] hover:bg-[#5c3007] hover:text-[#FCFDFE] transition-colors"
+                  >
+                    <Whatsapp className="w-6 h-6 mr-2 fill-[#7E4108] group-hover:fill-[#FCFDFE] transition-colors" />
+                    Reservar via WhatsApp
+                  </a>
+                  <a
+                    href="https://widget.getinapp.com.br/VPz8yq6Q?fbclid=PAZXh0bgNhZW0CMTEAAaYHkzIonFkx_Yls96XyPFEKExCI_cto0QltKG1ZpWV3r3hJ9RmV_YdxVmA_aem_y_VYn5BmcbjgtXquk176YQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#7E4108] text-white py-3 px-6 rounded-lg text-center font-semibold hover:bg-[#5c3007] transition-colors shadow-md flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-6 h-6 mr-2"
+                    >
+                      <title>Reservar via Site</title>
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                    </svg>
+                    Reservar via Site
+                  </a>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
 
@@ -81,20 +127,31 @@ export default async function Page({ params: { locale } }: PageProps) {
 
             <div className="lg:w-1/2 max-w-2xl mx-auto text-center lg:text-left">
               <p className="mb-6 text-lg leading-relaxed text-gray-700">
-                Fundado em 2010 por um grupo de apaixonados por frutos do mar, o{' '}
-                <strong>Badejo</strong> nasceu com uma missão clara: trazer os
-                sabores mais frescos e autênticos dos oceanos diretamente para a
-                sua mesa. Desde o início, priorizamos a qualidade e o frescor,
-                combinando os melhores ingredientes com o cuidado artesanal de
-                nossos chefs.
+                O <strong>Badejo</strong> surgiu com o propósito de trazer para
+                Belo Horizonte a <strong>tradição do belorizontino</strong> de
+                frequentar as praias do Espírito Santo, materializando essa
+                experiência em um
+                <strong> restaurante capixaba com alma mineira</strong>.
+              </p>
+              <p className="mb-6 text-lg leading-relaxed text-gray-700">
+                <strong>Quatro anos depois</strong>, devido ao sucesso alcançado
+                em terras mineiras, foi inaugurada a{' '}
+                <strong>unidade do Badejo na capital paulista</strong>, mantendo
+                a mesma proposta implementada em Belo Horizonte. Em pouco tempo,
+                o restaurante conquistou o{' '}
+                <strong>paladar e o coração dos paulistanos</strong>.
+              </p>
+              <p className="mb-6 text-lg leading-relaxed text-gray-700">
+                Com <strong>ingredientes selecionados</strong> e uma{' '}
+                <strong>tradicional cozinha capixaba</strong>
+                buscamos dedicar em cada moqueca, em cada prato toda nossa
+                <strong> paixão em servir bem</strong> e no{' '}
+                <strong>cuidado com nossos clientes</strong>.
               </p>
               <p className="text-lg leading-relaxed text-gray-700">
-                Localizado no coração de uma charmosa cidade litorânea,
-                cultivamos uma relação próxima com pescadores e fazendeiros
-                locais, garantindo não apenas a qualidade superior de nossos
-                pratos, mas também o fortalecimento de nossa comunidade. Aqui no
-                Badejo, cada refeição é uma celebração do mar, harmonizada com
-                nossos molhos exclusivos e feitos na casa.
+                São <strong>várias opções de moquecas</strong> em nosso cardápio
+                além de{' '}
+                <strong>várias opções com peixes e frutos do mar</strong>.
               </p>
             </div>
           </div>
@@ -125,7 +182,7 @@ export default async function Page({ params: { locale } }: PageProps) {
                 <p className="text-lg leading-relaxed text-[#FCFDFE]">
                   O pirão é puxado numa farinha de mandioca fina, peixe desfiado
                   e os mesmos ingredientes da moqueca Arroz branco e farofinha
-                  de banana da terra completam a nossa moqueca capixaba.
+                  com banana da terra completam a nossa moqueca capixaba.
                 </p>
               </div>
               <div className="mb-8 lg:mb-0 lg:w-1/2">
@@ -263,7 +320,7 @@ export default async function Page({ params: { locale } }: PageProps) {
                 <h3 className="text-xl font-semibold mb-2">Contato</h3>
                 <p className="text-center">
                   Telefone: (11) 5052-6890 <br />
-                  Whatsapp: (11) 9 9340-8275 <br />
+                  Whatsapp: (11) 9 9489-1957
                 </p>
               </div>
             </div>
