@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${playfair_display.className} antialiased`}>
-        <Header />
+        <Header locale={locale} />
         {children}
         <Footer />
       </body>

@@ -28,14 +28,20 @@ export default function SaucesPage() {
                   className="h-64 bg-[url('/sauce.jpg')] bg-cover bg-center"
                   aria-hidden="true"
                 />
-                <div className="p-8">
-                  <h2 className="text-2xl font-semibold mb-4 text-[#7E4108]">
+                <div className="p-4 sm:p-8">
+                  <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-[#7E4108]">
                     {sauce.name}
                   </h2>
-                  <p className="text-gray-600 leading-relaxed mb-4">
-                    {sauce.description}
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-3 sm:mb-4">
+                    Molho para preparo de moquecas capixaba.
                   </p>
-                  <p className="text-lg font-semibold text-[#7E4108]">
+                  <ul className="text-sm sm:text-base text-gray-600 list-disc pl-5 space-y-1 mb-3 sm:mb-4">
+                    <li>Não contém glúten</li>
+                    <li>Orgânico</li>
+                    <li>Utilizado também para pratos veganos</li>
+                    <li>Coentro opcional</li>
+                  </ul>
+                  <p className="text-base sm:text-lg font-semibold text-[#7E4108]">
                     Valor: R$ 45,00 (Avulso)
                   </p>
                 </div>
