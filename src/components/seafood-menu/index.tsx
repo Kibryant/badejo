@@ -14,7 +14,6 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -80,7 +79,11 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
         className="w-full md:w-64 m-2 bg-white bg-opacity-80 backdrop-blur-sm transition-all hover:shadow-lg"
       >
         <CardHeader>
-          <CardTitle className="">{t(item.name)}</CardTitle>
+          <CardTitle>
+            {/* Exibindo o número do item do menu */}
+            <span className="text-sm text-gray-500 mr-2">#{item.number}</span>
+            {t(item.name)}
+          </CardTitle>
           <CardDescription>{t(item.description)}</CardDescription>
         </CardHeader>
         <CardFooter className="flex justify-between">
@@ -137,7 +140,11 @@ export function SeafoodMenu({ namespace }: SeafoodMenuProps) {
             className="w-full md:w-64 m-2 bg-white bg-opacity-80 backdrop-blur-sm transition-all hover:shadow-lg"
           >
             <CardHeader>
-              <CardTitle>{t(drink.description)}</CardTitle>
+              <CardTitle>
+                {/* Exibindo o número da bebida */}
+                <span className="text-sm text-gray-500 mr-2">#{drink.number}</span>
+                {t(drink.description)}
+              </CardTitle>
             </CardHeader>
             <CardFooter>
               <span className="text-green-700 font-bold">
