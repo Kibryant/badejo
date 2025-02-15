@@ -1,6 +1,7 @@
 import { kits } from '@/constants/kits'
 import { sauces } from '@/constants/sauces'
 import { Utensils } from 'lucide-react'
+import Image from 'next/image'
 
 export default function SaucesPage() {
   return (
@@ -35,7 +36,7 @@ export default function SaucesPage() {
                     {sauce.description}
                   </p>
                   <p className="text-lg font-semibold text-[#7E4108]">
-                    Valor: R$ 45,00
+                    Valor: R$ 45,00 (Avulso)
                   </p>
                 </div>
               </article>
@@ -72,6 +73,41 @@ export default function SaucesPage() {
           </div>
         </section>
 
+        <section className="bg-[#7E4108] py-16 sm:py-24">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+              <div className="w-full md:w-1/2">
+                <Image
+                  src="/kit.jpg"
+                  alt="Promoção: Compre 2 kits e ganhe uma panela de barro"
+                  width={500}
+                  height={400}
+                  className="rounded-lg shadow-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2 text-center md:text-left">
+                <h2 className="text-4xl font-bold mb-3 text-[#FCFDFE]">
+                  Promoção Especial!
+                </h2>
+
+                <p className="text-lg text-[#FCFDFE] mb-4">
+                  Na compra de <strong>2 kits de moqueca</strong>, você recebe
+                  de brinde:
+                </p>
+
+                <ul className="text-lg text-[#FCFDFE] mb-6 list-disc list-inside">
+                  <li>Uma panela de barro autêntica</li>
+                  <li>Suporte de apoio para a panela</li>
+                </ul>
+                <p className="text-lg text-[#FCFDFE]">
+                  Aproveite essa oferta exclusiva e prepare suas moquecas com o
+                  verdadeiro toque capixaba!
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="container mx-auto py-16 sm:py-24 px-4">
           <h2 className="text-4xl font-bold mb-3 text-center text-[#7E4108]">
             Como Fazer o Melhor Molho
@@ -92,20 +128,20 @@ export default function SaucesPage() {
           </p>
         </section>
 
-        <section className="container mx-auto py-16 sm:py-24 px-4 text-center">
-          <h2 className="text-4xl font-bold mb-3 text-[#7E4108]">
+        <section className="bg-[#7E4108] py-16 sm:py-24 px-4 text-center">
+          <h2 className="text-4xl font-bold mb-3 text-[#FCFDFE]">
             A História por Trás dos Nossos Molhos
           </h2>
-          <div className="w-20 h-1 bg-[#7E4108] mx-auto mb-8" />
+          <div className="w-20 h-1 bg-[#FCFDFE] mx-auto mb-8" />
 
-          <p className="text-lg text-gray-700 mb-6 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#FCFDFE] mb-6 max-w-xl mx-auto leading-relaxed">
             Cada um de nossos molhos carrega uma rica tradição familiar e é
             elaborado com ingredientes frescos e selecionados. Desde o molho
             tradicional, uma herança de sabor, até criações inovadoras que
             encantam o paladar, nossos molhos são feitos com amor e dedicação.
           </p>
 
-          <p className="text-lg text-gray-700 mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#FCFDFE] mb-8 max-w-xl mx-auto leading-relaxed">
             Descubra como um bom molho pode transformar seu prato em uma
             experiência única!
           </p>

@@ -18,11 +18,12 @@ import { DialogHeader } from '../ui/dialog'
 export function Footer() {
   const pathname = usePathname()
 
-  const isBrownBg = pathname.includes('menu') || pathname.includes('sauces')
+  const isBrownBg = pathname.includes('menu')
 
   const bgColor = isBrownBg ? 'bg-[#734108]' : 'bg-[#FCFDFE]'
   const textColor = isBrownBg ? 'text-[#FCFDFE]' : 'text-black'
-  const highlightColor = isBrownBg ? 'text-[#FCFDFE]' : 'tex t-[#7E4108]'
+  const fillColor = isBrownBg ? 'fill-[#FCFDFE]' : 'fill-[#7E4108]'
+  const highlightColor = isBrownBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
   const subTextColor = isBrownBg ? 'text-zinc-300' : 'text-zinc-700'
   const iconColor = isBrownBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
 
@@ -85,18 +86,26 @@ export function Footer() {
                 </span>
               </span>
             </p>
+            <p className="flex items-center justify-center md:justify-start space-x-2">
+              <Whatsapp
+                className={`${fillColor} size-5`}
+                aria-label="Telefone"
+              />
+              <span className={`font-bold ${highlightColor}`}>
+                <span className={`font-normal ${subTextColor}`}>
+                  (11) 9 9489-1957
+                </span>
+              </span>
+            </p>
             <p className="flex items-center justify-center md:justify-start sm:space-x-2">
               <MapPin
                 className={`${iconColor}`}
                 size={20}
                 aria-label="Endereço"
               />
-              <span className={`font-bold ${highlightColor}`}>
-                Endereço:{' '}
                 <span className={`font-normal ${subTextColor}`}>
                   Av. Moema, 265 - Moema, São Paulo
                 </span>
-              </span>
             </p>
           </div>
 
@@ -104,7 +113,7 @@ export function Footer() {
             <a
               href="https://www.instagram.com/badejorestaurantesp/"
               aria-label="Instagram"
-              className={`${iconColor}`}
+              className={`${iconColor} hover:opacity-75 transition-opacity`}
             >
               <Instagram size={28} />
             </a>
@@ -113,6 +122,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Ifood"
+              className="hover:opacity-75 transition-opacity"
             >
               <Ifood width={32} height={32} />
             </a>
@@ -128,32 +138,34 @@ export function Footer() {
           <nav className="flex flex-col space-y-2">
             <Link
               href="/"
-              className={`${subTextColor} hover:${highlightColor}`}
+              className={`${subTextColor} hover:${highlightColor} transition-colors`}
               aria-label="Ir para a página inicial"
             >
               Início
             </Link>
             <Link
               href="/menu"
-              className={`${subTextColor} hover:${highlightColor}`}
+              className={`${subTextColor} hover:${highlightColor} transition-colors`}
               aria-label="Ver o menu"
             >
               Cardápio
             </Link>
             <Link
               href="/sauces"
-              className={`${subTextColor} hover:${highlightColor}`}
+              className={`${subTextColor} hover:${highlightColor} transition-colors`}
               aria-label="Reservar uma mesa"
             >
               Molhos
             </Link>
 
             <Dialog>
-              <DialogTrigger className={`${isBrownBg ? "bg-white": "bg-[#734108]"} ${isBrownBg ? "text-[#734108]" : "text-white"} py-2 px-4 rounded-full text-center font-bold hover:underline`}>
+              <DialogTrigger
+                className={`${isBrownBg ? 'bg-white' : 'bg-[#734108]'} ${isBrownBg ? 'text-[#734108]' : 'text-white'} py-2 px-4 rounded-full text-center font-bold hover:underline transition-colors`}
+              >
                 Faça sua Reserva
               </DialogTrigger>
               <DialogContent className="bg-[#F5F5F5] border border-gray-200 rounded-lg shadow-xl">
-                <DialogHeader>  
+                <DialogHeader>
                   <DialogTitle className="text-2xl font-bold text-[#7E4108]">
                     Escolha como deseja fazer sua reserva
                   </DialogTitle>
