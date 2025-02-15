@@ -143,7 +143,7 @@ export default async function Page({ params: { locale } }: PageProps) {
               </p>
               <p className="mb-6 text-lg leading-relaxed text-gray-700">
                 Com <strong>ingredientes selecionados</strong> e uma{' '}
-                <strong>tradicional cozinha capixaba</strong>
+                <strong>tradicional cozinha capixaba </strong>
                 buscamos dedicar em cada moqueca, em cada prato toda nossa
                 <strong> paixão em servir bem</strong> e no{' '}
                 <strong>cuidado com nossos clientes</strong>.
