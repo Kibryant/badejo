@@ -13,10 +13,6 @@ interface PageProps {
 
 const namespace = ['menu']
 
-export function mockDelay(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
 export default async function Page({ params: { locale } }: PageProps) {
   const { t, resources } = await initTranslations(locale, namespace)
 
