@@ -566,9 +566,9 @@ export const menuData: MenuData = {
     },
     {
       number: '74',
-      name: 'Picanha Importada (300g)',
+      name: 'Filé Mignon com Arroz e Purê',
       description:
-        'Picanha importada grelhada, perfeita para os amantes de carne.',
+        'Filé mignon grelhado, servido com arroz e purê, uma combinação clássica.',
       price: '120,00',
     },
   ],
