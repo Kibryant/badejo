@@ -18,6 +18,9 @@ type MenuData = {
     individuals: MenuItem[]
     alternatives: MenuItem[]
     optionalAddOns: MenuItem[]
+    specialMoquecas: MenuItem[]
+    executives: MenuItem[]
+    desserts: MenuItem[]
     drinks: typeof drinks
 }
 
@@ -574,6 +577,165 @@ export const menuData: MenuData = {
             description:
                 'Banana da terra frita, um acompanhamento doce e perfeito para contrastar com os sabores das moquecas.',
             price: 39.0,
+        },
+    ],
+    desserts: [
+        {
+            number: '75',
+            name: 'Arroz Doce',
+            description:
+                'Clássico arroz doce cremoso, preparado com leite, açúcar e toque de canela, servido gelado.',
+            price: '14,90',
+        },
+        {
+            number: '76',
+            name: 'Pudim de Leite',
+            description:
+                'Tradicional pudim de leite condensado, macio e delicado, coberto com calda de caramelo.',
+            price: '14,90',
+        },
+        {
+            number: '77',
+            name: 'Curau de Milho',
+            description:
+                'Curau artesanal feito com milho verde, leite e açúcar, de textura cremosa e sabor suave.',
+            price: '14,90',
+        },
+        {
+            number: '78',
+            name: 'Café Expresso',
+            description: 'Café encorpado e aromático, servido na medida ideal.',
+            price: '9,90',
+        },
+        {
+            number: '79',
+            name: 'Café Expresso Duplo',
+            description: 'Dose dupla de café expresso, intenso e marcante.',
+            price: '14,90',
+        },
+        {
+            number: '80',
+            name: 'Frutas da Época',
+            description:
+                'Seleção de frutas frescas da estação (abacaxi, mamão papaya, morango e banana).',
+            price: '18,90',
+        },
+        {
+            number: '81',
+            name: 'Brownie com Sorvete e Calda de Chocolate',
+            description:
+                'Brownie de chocolate quente e macio, servido com sorvete de creme e finalizado com calda de chocolate.',
+            price: '28,90',
+        },
+        {
+            number: '82',
+            name: 'Banana da Terra Grelhada com Sorvete e Calda de Caramelo',
+            description:
+                'Banana da terra grelhada, acompanhada de sorvete de creme e calda de caramelo.',
+            price: '24,90',
+        },
+        {
+            number: '83',
+            name: 'Creme de Papaya com Creme de Cassis',
+            description:
+                'Creme gelado de papaya batido, servido com licor de cassis.',
+            price: '24,90',
+        },
+    ],
+    specialMoquecas: [
+        {
+            number: '84',
+            name: 'Moqueca Mista (500g)',
+            description:
+                'Moqueca especial com badejo (200g), camarão rosa, camarão rosinha, polvo e lula (100g de cada), preparada no molho tradicional com tomates, cebola, pimentões e azeite.',
+            price: '268,00',
+        },
+        {
+            number: '85',
+            name: 'Moqueca de Camarão (400g)',
+            description:
+                'Camarões rosa e rosinha (200g de cada) cozidos lentamente no molho clássico da casa.',
+            price: '229,00',
+        },
+        {
+            number: '86',
+            name: 'Moqueca de Camarão Rosa Médio (400g)',
+            description:
+                'Moqueca preparada com camarões rosa médios selecionados, de sabor marcante e textura delicada.',
+            price: '219,00',
+        },
+        {
+            number: '87',
+            name: 'Moqueca de Badejo com Camarão Rosa e Rosinha',
+            description:
+                'Combinação de badejo com camarões rosa e rosinha, cozidos em caldo aromático e encorpado.',
+            price: '268,00',
+        },
+        {
+            number: '88',
+            name: 'Moqueca de Camarão VG',
+            description:
+                'Moqueca elaborada com camarões VG (extra grandes), ideal para quem busca intensidade e sofisticação.',
+            price: '299,00',
+        },
+    ],
+    executives: [
+        {
+            number: '89',
+            name: 'Moqueca Executiva de Camarão',
+            description: 'Acompanha arroz, pirão e farofa de banana.',
+            price: '69,90',
+        },
+        {
+            number: '90',
+            name: 'Moqueca Executiva de Peixe',
+            description: 'Acompanha arroz, pirão e farofa de banana.',
+            price: '69,90',
+        },
+        {
+            number: '91',
+            name: 'Moqueca Executiva de Bacalhau Desfiado',
+            description: 'Acompanha arroz, pirão e farofa de banana.',
+            price: '69,90',
+        },
+        {
+            number: '92',
+            name: 'Moqueca Executiva de Mexilhão / Lulas',
+            description: 'Acompanha arroz, pirão e farofa de banana.',
+            price: '69,90',
+        },
+        {
+            number: '93',
+            name: 'Truta (Grelhada ou Frita)',
+            description: 'Acompanha arroz e legumes, purê ou fritas.',
+            price: '69,90',
+        },
+        {
+            number: '94',
+            name: 'Filé de Frango Grelhado',
+            description: 'Acompanha arroz e legumes, purê ou fritas.',
+            price: '59,90',
+        },
+        {
+            number: '95',
+            name: 'Espaguete com Filé Mignon',
+            description:
+                'Espaguete ao molho da casa com filé mignon macio e bem temperado.',
+            price: '69,90',
+        },
+        {
+            number: '96',
+            name: 'Arroz de Bacalhau',
+            description:
+                'Arroz preparado com bacalhau desfiado, temperos frescos e azeite.',
+            price: '69,90',
+        },
+        {
+            number: '97',
+            name: 'Parmegiana de Frango',
+            description:
+                'Filé de frango empanado, coberto com molho de tomate e queijo derretido.',
+            price: '59,90',
         },
     ],
     drinks,
