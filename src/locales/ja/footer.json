@@ -1,0 +1,22 @@
+{
+  "horarios": "営業時間",
+  "segunda": "月曜日:",
+  "fechado": "休業",
+  "terca": "火曜日:",
+  "terca_horario": "12:00 - 15:00",
+  "quarta_sexta": "水曜〜金曜:",
+  "quarta_sexta_horario": "12:00 - 15:00 / 18:00 - 22:00",
+  "sabado": "土曜日:",
+  "sabado_horario": "12:00 - 22:00",
+  "domingo": "日曜日:",
+  "domingo_horario": "12:00 - 17:00",
+  "feriados": "祝日:",
+  "feriados_horario": "12:00 - 16:00",
+  "endereco": "Av. Moema, 265 - Moema, São Paulo",
+  "navegacao": "ナビゲーション",
+  "inicio": "ホーム",
+  "cardapio": "メニュー",
+  "molhos": "ソース",
+  "faca_reserva": "予約する",
+  "copyright": "Copyright ©{{year}} Badejo."
+}

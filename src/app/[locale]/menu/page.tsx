@@ -10,7 +10,7 @@ interface PageProps {
     }
 }
 
-const namespace = ['menu']
+const namespace = ['menu', 'common']
 
 export default async function Page({ params: { locale } }: PageProps) {
     const { t, resources } = await initTranslations(locale, namespace)

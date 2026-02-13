@@ -16,7 +16,7 @@ interface ReservationDialogProps {
 }
 
 export function ReservationDialog({ children }: ReservationDialogProps) {
-    const { t } = useTranslation('home')
+    const { t } = useTranslation('common')
 
     return (
         <Dialog>

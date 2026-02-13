@@ -1,0 +1,22 @@
+{
+  "horarios": "Horários",
+  "segunda": "Segunda:",
+  "fechado": "Fechado",
+  "terca": "Terça:",
+  "terca_horario": "12:00 às 15:00",
+  "quarta_sexta": "Quarta á Sexta:",
+  "quarta_sexta_horario": "12:00 às 15:00 - 18 ás 22:00",
+  "sabado": "Sábado:",
+  "sabado_horario": "12:00 às 22:00",
+  "domingo": "Domingo:",
+  "domingo_horario": "12:00 às 17:00",
+  "feriados": "Feriados:",
+  "feriados_horario": "12:00 às 16:00",
+  "endereco": "Av. Moema, 265 - Moema, São Paulo",
+  "navegacao": "Navegação",
+  "inicio": "Início",
+  "cardapio": "Cardápio",
+  "molhos": "Molhos",
+  "faca_reserva": "Faça sua Reserva",
+  "copyright": "Copyright ©{{year}} Badejo."
+}

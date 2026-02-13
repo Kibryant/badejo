@@ -1,18 +1,21 @@
-'use client'
-
 import Image from 'next/image'
 import { Phone, MapPin, Instagram } from 'lucide-react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { Ifood } from '../icons/ifood'
 import { Whatsapp } from '../icons/whatsapp'
 import { ReservationDialog } from '../reservation-dialog'
 import { DialogTrigger } from '../ui/dialog'
+import { initTranslations } from '@/app/i18n'
 
-export function Footer() {
-    const pathname = usePathname()
+interface FooterProps {
+    locale: string
+    isBrownBg?: boolean
+}
 
-    const isBrownBg = pathname.includes('menu')
+const namespace = ['footer', 'common']
+
+export async function Footer({ locale, isBrownBg = false }: FooterProps) {
+    const { t } = await initTranslations(locale, namespace)
 
     const bgColor = isBrownBg ? 'bg-[#734108]' : 'bg-[#FCFDFE]'
     const textColor = isBrownBg ? 'text-[#FCFDFE]' : 'text-black'
@@ -20,6 +23,7 @@ export function Footer() {
     const highlightColor = isBrownBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
     const subTextColor = isBrownBg ? 'text-zinc-300' : 'text-zinc-700'
     const iconColor = isBrownBg ? 'text-[#FCFDFE]' : 'text-[#7E4108]'
+    const currentYear = new Date().getFullYear()
 
     return (
         <footer
@@ -28,41 +32,41 @@ export function Footer() {
             <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-start space-y-10 md:space-y-0 text-center md:text-left">
                 <div className="space-y-5">
                     <h2 className={`text-3xl md:text-4xl font-bold ${highlightColor}`}>
-                        Horários
+                        {t('footer:horarios')}
                     </h2>
                     <div className="text-lg space-y-2">
                         <p className={`font-bold ${highlightColor}`}>
-                            Segunda:{' '}
-                            <span className={`font-normal ${subTextColor}`}>Fechado</span>
+                            {t('footer:segunda')}{' '}
+                            <span className={`font-normal ${subTextColor}`}>{t('footer:fechado')}</span>
                         </p>
                         <p className={`font-bold ${highlightColor}`}>
-                            Terça:{' '}
+                            {t('footer:terca')}{' '}
                             <span className={`font-normal ${subTextColor}`}>
-                                12:00 às 15:00
+                                {t('footer:terca_horario')}
                             </span>
                         </p>
                         <p className={`font-bold ${highlightColor}`}>
-                            Quarta á Sexta:{' '}
+                            {t('footer:quarta_sexta')}{' '}
                             <span className={`font-normal ${subTextColor}`}>
-                                12:00 às 15:00 - 18 ás 22:00
+                                {t('footer:quarta_sexta_horario')}
                             </span>
                         </p>
                         <p className={`font-bold ${highlightColor}`}>
-                            Sábado:{' '}
+                            {t('footer:sabado')}{' '}
                             <span className={`font-normal ${subTextColor}`}>
-                                12:00 às 22:00
+                                {t('footer:sabado_horario')}
                             </span>
                         </p>
                         <p className={`font-bold ${highlightColor}`}>
-                            Domingo:{' '}
+                            {t('footer:domingo')}{' '}
                             <span className={`font-normal ${subTextColor}`}>
-                                12:00 às 17:00
+                                {t('footer:domingo_horario')}
                             </span>
                         </p>
                         <p className={`font-bold ${highlightColor}`}>
-                            Feriados:{' '}
+                            {t('footer:feriados')}{' '}
                             <span className={`font-normal ${subTextColor}`}>
-                                12:00 às 16:00
+                                {t('footer:feriados_horario')}
                             </span>
                         </p>
                     </div>
@@ -98,7 +102,7 @@ export function Footer() {
                                 aria-label="Endereço"
                             />
                             <span className={`font-normal ${subTextColor}`}>
-                                Av. Moema, 265 - Moema, São Paulo
+                                {t('footer:endereco')}
                             </span>
                         </p>
                     </div>
@@ -123,40 +127,40 @@ export function Footer() {
                     </div>
 
                     <p className="hidden sm:block text-xs text-zinc-300 mt-4">
-                        Copyright ©2024 Badejo.
+                        {t('footer:copyright', { year: currentYear })}
                     </p>
                 </div>
 
                 <div className="flex flex-col items-center md:items-start space-y-3">
-                    <h3 className={`text-2xl font-bold ${highlightColor}`}>Navegação</h3>
+                    <h3 className={`text-2xl font-bold ${highlightColor}`}>{t('footer:navegacao')}</h3>
                     <nav className="flex flex-col space-y-2">
                         <Link
                             href="/"
                             className={`${subTextColor} hover:${highlightColor} transition-colors`}
                             aria-label="Ir para a página inicial"
                         >
-                            Início
+                            {t('footer:inicio')}
                         </Link>
                         <Link
                             href="/menu"
                             className={`${subTextColor} hover:${highlightColor} transition-colors`}
                             aria-label="Ver o menu"
                         >
-                            Cardápio
+                            {t('footer:cardapio')}
                         </Link>
                         <Link
                             href="/sauces"
                             className={`${subTextColor} hover:${highlightColor} transition-colors`}
                             aria-label="Reservar uma mesa"
                         >
-                            Molhos
+                            {t('footer:molhos')}
                         </Link>
 
                         <ReservationDialog>
                             <DialogTrigger
                                 className={`${isBrownBg ? 'bg-white' : 'bg-[#734108]'} ${isBrownBg ? 'text-[#734108]' : 'text-white'} py-2 px-4 rounded-full text-center font-bold hover:underline transition-colors`}
                             >
-                                Faça sua Reserva
+                                {t('footer:faca_reserva')}
                             </DialogTrigger>
                         </ReservationDialog>
                     </nav>
@@ -173,7 +177,7 @@ export function Footer() {
                 </div>
 
                 <p className="block sm:hidden text-xs text-zinc-300 mt-4">
-                    Copyright ©2024 Badejo.
+                    {t('footer:copyright', { year: currentYear })}
                 </p>
             </div>
         </footer>

@@ -15,7 +15,7 @@ interface PageProps {
     }
 }
 
-const namespace = ['home']
+const namespace = ['home', 'common']
 
 export default async function Page({ params: { locale } }: PageProps) {
     const { t } = await initTranslations(locale, namespace)
@@ -26,7 +26,7 @@ export default async function Page({ params: { locale } }: PageProps) {
         <div className="min-h-screen bg-[#FCFDFE] text-[#000000]">
             <Link
                 href="/sauces"
-                className="fixed bottom-8 right-8 bg-[#7E4108] text-[#FCFDFE] py-3 px-6 rounded-full shadow-lg"
+                className="fixed bottom-8 right-8 z-50 bg-[#7E4108] text-[#FCFDFE] py-3 px-6 rounded-full shadow-lg hover:bg-[#5c3007] hover:scale-105 transition-all duration-300"
             >
                 {t('conheca_molhos')}
             </Link>
@@ -284,7 +284,7 @@ export default async function Page({ params: { locale } }: PageProps) {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                                 <div className="flex items-center mb-4">
-                                    <p className="font-bold text-lg">João Silva</p>
+                                    <p className="font-bold text-lg">{t('cliente_nome_1')}</p>
                                 </div>
                                 <p className="italic mb-4">
                                     {t('depoimento_1')}
@@ -294,7 +294,7 @@ export default async function Page({ params: { locale } }: PageProps) {
 
                             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                                 <div className="flex items-center mb-4">
-                                    <p className="font-bold text-lg">Maria Souza</p>
+                                    <p className="font-bold text-lg">{t('cliente_nome_2')}</p>
                                 </div>
                                 <p className="italic mb-4">
                                     {t('depoimento_2')}
@@ -304,22 +304,22 @@ export default async function Page({ params: { locale } }: PageProps) {
 
                             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                                 <div className="flex items-center mb-4">
-                                    <p className="font-bold text-lg">Maria Souza</p>
+                                    <p className="font-bold text-lg">{t('cliente_nome_3')}</p>
                                 </div>
                                 <p className="italic mb-4">
-                                    {t('depoimento_2')}
+                                    {t('depoimento_3')}
                                 </p>
-                                <p className="text-sm text-gray-600">{t('cliente_desde_2018')}</p>
+                                <p className="text-sm text-gray-600">{t('cliente_desde_2021')}</p>
                             </div>
 
                             <div className="border p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
                                 <div className="flex items-center mb-4">
-                                    <p className="font-bold text-lg">Maria Souza</p>
+                                    <p className="font-bold text-lg">{t('cliente_nome_4')}</p>
                                 </div>
                                 <p className="italic mb-4">
-                                    {t('depoimento_2')}
+                                    {t('depoimento_4')}
                                 </p>
-                                <p className="text-sm text-gray-600">{t('cliente_desde_2018')}</p>
+                                <p className="text-sm text-gray-600">{t('cliente_desde_2019')}</p>
                             </div>
                         </div>
                     </div>

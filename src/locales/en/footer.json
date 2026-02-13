@@ -1,0 +1,22 @@
+{
+  "horarios": "Hours",
+  "segunda": "Monday:",
+  "fechado": "Closed",
+  "terca": "Tuesday:",
+  "terca_horario": "12:00 PM - 3:00 PM",
+  "quarta_sexta": "Wednesday to Friday:",
+  "quarta_sexta_horario": "12:00 PM - 3:00 PM / 6:00 PM - 10:00 PM",
+  "sabado": "Saturday:",
+  "sabado_horario": "12:00 PM - 10:00 PM",
+  "domingo": "Sunday:",
+  "domingo_horario": "12:00 PM - 5:00 PM",
+  "feriados": "Holidays:",
+  "feriados_horario": "12:00 PM - 4:00 PM",
+  "endereco": "Av. Moema, 265 - Moema, São Paulo",
+  "navegacao": "Navigation",
+  "inicio": "Home",
+  "cardapio": "Menu",
+  "molhos": "Sauces",
+  "faca_reserva": "Book a Table",
+  "copyright": "Copyright ©{{year}} Badejo."
+}
